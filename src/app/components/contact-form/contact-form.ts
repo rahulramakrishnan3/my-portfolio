@@ -13,9 +13,17 @@ export class ContactForm implements OnInit {
 
   constructor() {
     this.myForm = new FormGroup({
-      firstName: new FormControl('', Validators.required),
-      email: new FormControl('', Validators.required),
-      message: new FormControl('', Validators.required),
+      name: new FormControl('', [
+        Validators.required,
+        Validators.minLength(3),
+        Validators.maxLength(30),
+      ]),
+      email: new FormControl('', [Validators.required, Validators.email, Validators.maxLength(50)]),
+      message: new FormControl('', [
+        Validators.required,
+        Validators.minLength(10),
+        Validators.maxLength(500),
+      ]),
     });
   }
   ngOnInit() {

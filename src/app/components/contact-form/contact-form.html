@@ -1,4 +1,6 @@
-<div class="flex flex-col p-6 gap-4 min-h-[calc(100vh-80px)] mx-auto item-center justify-center">
+<div
+  class="flex flex-col p-6 gap-4 min-h-[calc(100vh-70px)] mx-auto item-center justify-center bg-gradient-to-tl from-gray-400 via-white to-white"
+>
   <h1 class="font-medium">Let's Work Together</h1>
   <p>
     Have a project in mind or just want to chat? <br />
@@ -11,15 +13,20 @@
   >
     <div class="grid gap-6 mb-6 md:grid-cols-2">
       <div>
-        <label for="first_name" class="block mb-2.5 text-sm font-medium text-heading">Name</label>
+        <label for="name" class="block mb-2.5 text-sm font-medium text-heading">Name</label>
         <input
           type="text"
-          id="first_name"
+          id="name"
           class="border-gray-300 rounded border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
           placeholder="Your Name"
-          formControlName="firstName"
+          formControlName="name"
           required
         />
+        @if (myForm.get('name')?.invalid && myForm.get('name')?.touched) {
+        <p class="mt-2.5 text-sm text-red-600 text-fg-danger-strong">
+          <span class="font-medium">Oh, snapp!</span> Name is empty &#128519;.
+        </p>
+        }
       </div>
       <div>
         <label for="email" class="block mb-2.5 text-sm font-medium text-heading">Email</label>
@@ -31,6 +38,11 @@
           formControlName="email"
           required
         />
+        @if (myForm.get('email')?.invalid && myForm.get('email')?.touched) {
+        <p class="mt-2.5 text-sm text-red-600 text-fg-danger-strong">
+          <span class="font-medium">Oh, snapp!</span> Email is empty &#128519;.
+        </p>
+        }
       </div>
       <div>
         <label for="Notes">
@@ -45,11 +57,16 @@
             formControlName="message"
           ></textarea>
         </label>
+        @if (myForm.get('message')?.invalid && myForm.get('message')?.touched) {
+        <p class="mt-2.5 text-sm text-red-600 text-fg-danger-strong">
+          <span class="font-medium">Oh, snapp!</span> Message is empty &#128519;.
+        </p>
+        }
       </div>
     </div>
     <button
       type="submit"
-      class="bg-white text-black box-border border border-gray-500 rounded hover:bg-brand-strong focus:ring-1 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
+      class="bg-white text-black box-border border border-gray-500 rounded hover:bg-brand-strong focus:ring-1 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none disabled:bg-gray-200 disabled:text-gray-400 disabled:border-gray-200 disabled:cursor-not-allowed"
       [disabled]="myForm.invalid"
     >
       Submit
