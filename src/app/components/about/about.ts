@@ -27,7 +27,7 @@ export class About {
       title: 'Development Practices',
       icon: 'svgs/color-palette-svgrepo-com.svg',
       description: `I follow best practices in web development, including version control with Git, agile methodologies. I prioritize code quality, performance optimization, and user-centric design in my workflow.`,
-      list: ['Git', 'Agile', 'Responsive Design', 'Performance Optimization'],
+      list: ['Agile', 'Responsive Design', 'Performance Optimization'],
       id: 3,
     },
   ];
