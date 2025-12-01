@@ -1,57 +1,56 @@
 <div
-  class="main p-6 flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-40 min-h-[calc(100vh-70px)] mx-auto item-center justify-center bg-gradient-to-tl from-gray-400 via-white to-white"
+  class="main p-6 flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-40 min-h-[calc(100vh-72px)] mx-auto item-center justify-center bg-gradient-to-tl from-gray-400 via-white to-white"
 >
-  <div>
-    <div class="image-div">
+  <div class="grid grid-cols-1">
+    <div class="image-div flex flex-col md:flex-row md:items-center gap-10 pb-8">
       <img src="images/profile-image.jpg" alt="" class="h-48 w-48 rounded-circle" />
-      <h1 class="text-4xl font-semibold">
+      <h1 class="text-4xl font-semibold md:text-5xl lg:text-6xl font-bold tracking-tight">
         Hey, I'm <span>{{ data.name }}</span>
         <div class="inline-block">✨</div>
         <br />
         A <span>{{ data.role }}</span>
       </h1>
     </div>
-    <p class="text-lg mt-4 mb-6">
-      An Angular Developer with solidfoundation in design. <br />Passionate about crafting seamless
-      user experience.
+    <p class="text-lg mt-4 mb-6 text-xl max-w-[750px] bg-foreground gradient-text-white">
+      A Software Developer with solid foundation in
+      <span class="text-red-800 font-semibold">Angular</span>. <br />Passionate about crafting
+      seamless user experience.
     </p>
-    <div class="flex flex-col gap-4">
+    <div
+      class="flex flex-col gap-4 flex lg:gap-0 lg:flex-row lg:items-center justify-between max-w-[600px] mt-8"
+    >
       <div class="flex gap-4">
         <a href="RESUME_FD_KL.pdf"
           ><button
             type="button"
-            class="text-white bg-[#0f1419] box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-full text-sm px-4 py-2.5 focus:outline-none"
+            class="cursor-pointer text-white bg-[#0f1419] box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-full text-sm px-4 py-2.5 focus:outline-none"
           >
             Download CV
           </button></a
         >
-        <a href="/contact-form"
+        <a href="mailto:rahulramakrishnan512@gmail.com"
           ><button
             type="button"
-            class="text-white bg-[#0f1419] box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-full text-sm px-4 py-2.5 focus:outline-none"
+            class="cursor-pointer text-white bg-[#0f1419] box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-full text-sm px-4 py-2.5 focus:outline-none"
           >
             @ Contact Me
           </button></a
         >
       </div>
       <div class="flex item-center gap-4">
-        <a href="http://github.com/rahulramakrishnan3" class="h-8 w-8 inline-block mr-4">
-          <img src="svgs/github.svg" alt="" srcset="" />
+        <a href="https://github.com/rahulramakrishnan3" class="h-8 w-8 inline-block mr-4">
+          <img src="svgs/github.svg" alt="GitHub" srcset="" />
         </a>
-        <a href="/" class="h-8 w-8 inline-block mr-4">
-          <img src="svgs/instagram.svg" alt="" srcset="" />
+        <a href="https://www.instagram.com/rahulramakrishnan._" class="h-8 w-8 inline-block mr-4">
+          <img src="svgs/instagram.svg" alt="Instagram" srcset="" />
         </a>
-        <a href="/" class="h-8 w-8 inline-block mr-4">
+        <!-- <a href="/" class="h-8 w-8 inline-block mr-4">
           <img src="svgs/internet.svg" alt="" srcset="" />
-        </a>
+        </a> -->
         <a href="https://www.linkedin.com/in/rahulramakrishnan3" class="h-8 w-8 inline-block mr-4">
-          <img src="svgs/linkedin.svg" alt="" srcset="" />
+          <img src="svgs/linkedin.svg" alt="LinkedIn" srcset="" />
         </a>
       </div>
     </div>
   </div>
 </div>
-<!-- <div>
-  <app-contact-form></app-contact-form>
-  <app-about></app-about>
-</div> -->
