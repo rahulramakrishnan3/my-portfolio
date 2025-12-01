@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
+import { ContactForm } from '../components/contact-form/contact-form';
+import { About } from '../components/about/about';
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [ContactForm, About],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })

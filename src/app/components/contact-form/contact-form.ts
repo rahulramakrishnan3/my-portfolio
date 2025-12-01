@@ -14,9 +14,7 @@ export class ContactForm implements OnInit {
   constructor() {
     this.myForm = new FormGroup({
       firstName: new FormControl('', Validators.required),
-      lastName: new FormControl('', Validators.required),
       email: new FormControl('', Validators.required),
-      phoneNumber: new FormControl(''),
       message: new FormControl('', Validators.required),
     });
   }

@@ -1,79 +1,55 @@
-<div class="flex flex-col p-6 gap-4">
+<div class="flex flex-col p-6 gap-4 min-h-[calc(100vh-80px)] mx-auto item-center justify-center">
+  <h1 class="font-medium">Let's Work Together</h1>
+  <p>
+    Have a project in mind or just want to chat? <br />
+    Let's connect.
+  </p>
   <form
     [formGroup]="myForm"
-    class="bg-neutral-primary-medium shadow-md rounded-base p-6 mb-4 flex flex-col gap-4"
+    class="bg-slate-100 shadow-md rounded-base p-6 mb-4 flex flex-col gap-4"
     (ngSubmit)="onSubmit()"
   >
-    <h1 class="font-medium">Let's Work Together</h1>
     <div class="grid gap-6 mb-6 md:grid-cols-2">
       <div>
-        <label for="first_name" class="block mb-2.5 text-sm font-medium text-heading"
-          >First name</label
-        >
+        <label for="first_name" class="block mb-2.5 text-sm font-medium text-heading">Name</label>
         <input
           type="text"
           id="first_name"
-          class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
-          placeholder="John"
+          class="border-gray-300 rounded border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
+          placeholder="Your Name"
           formControlName="firstName"
           required
         />
       </div>
       <div>
-        <label for="last_name" class="block mb-2.5 text-sm font-medium text-heading"
-          >Last name</label
-        >
-        <input
-          type="text"
-          id="last_name"
-          class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
-          placeholder="Doe"
-          formControlName="lastName"
-          required
-        />
-      </div>
-      <div class="mb-6">
-        <label for="email" class="block mb-2.5 text-sm font-medium text-heading"
-          >Email address</label
-        >
+        <label for="email" class="block mb-2.5 text-sm font-medium text-heading">Email</label>
         <input
           type="email"
           id="email"
-          class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
-          placeholder="john.doe@company.com"
+          class="border-gray-300 rounded border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
+          placeholder="contact@example.com"
           formControlName="email"
           required
         />
       </div>
       <div>
-        <label for="phone" class="block mb-2.5 text-sm font-medium text-heading"
-          >Phone number</label
-        >
-        <input
-          type="tel"
-          id="phone"
-          class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
-          placeholder="123-45-678"
-          pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
-          formControlName="phoneNumber"
-          required
-        />
-      </div>
-      <div>
-        <label for="company" class="block mb-2.5 text-sm font-medium text-heading">Messsage</label>
-        <input
-          type="text"
-          id="company"
-          class="bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
-          placeholder="Message"
-          formControlName="message"
-          required
-        />
+        <label for="Notes">
+          <span class="text-sm font-medium"> Message </span>
+
+          <textarea
+            id="Notes"
+            class="bg-white mt-0.5 w-full resize-none rounded border-gray-300 shadow-sm sm:text-sm"
+            rows="4"
+            required
+            placeholder="Your message..."
+            formControlName="message"
+          ></textarea>
+        </label>
       </div>
     </div>
     <button
       type="submit"
-      class="text-black bg-dark box-border border border-transparent hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
+      class="bg-white text-black box-border border border-gray-500 rounded hover:bg-brand-strong focus:ring-1 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none"
       [disabled]="myForm.invalid"
     >
       Submit
