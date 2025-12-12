@@ -1,0 +1,25 @@
+<div
+  class="flex flex-col border border-border rounded-xl p-8 dark:bg-gradient-gray backdrop-blur-3xl"
+>
+  <div class="flex pb-4 items-start">
+    <h1 class="text-2xl font-bold text-center">{{ data.title }}</h1>
+  </div>
+  <div>
+    @if (!description) {
+    <p class="text-gray-600 dark:text-gray-400 pb-4 truncate" (click)="openDescription()">
+      {{ data.description }}
+    </p>
+    } @else{
+    <p class="text-gray-600 dark:text-gray-400 pb-4" (click)="closeDescription()">
+      {{ data.description }}
+    </p>
+    }
+  </div>
+  <div>
+    <a
+      class="bg-black text-white rounded shadow-xs font-medium text-sm px-4 py-2.5"
+      href="{{ data.link }}"
+      >{{ data.btnLabel }}</a
+    >
+  </div>
+</div>
