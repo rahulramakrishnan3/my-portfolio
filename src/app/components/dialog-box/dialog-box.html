@@ -33,10 +33,35 @@
         </svg>
       </button>
       <nav class="flex flex-col space-y-4 mt-8">
-        <a href="/" class="text-lg font-medium text-gray-800">Home</a>
-        <a href="about" class="text-lg font-medium text-gray-800">About</a>
-        <a href="contact-form" class="text-lg font-medium text-gray-800">Contact</a>
-        <a href="projects" class="text-lg font-medium text-gray-800">Projects</a>
+        <a
+          routerLink="/"
+          class="text-lg font-medium text-gray-800"
+          routerLinkActive="text-black font-semibold border rounded"
+          [routerLinkActiveOptions]="{ exact: true }"
+          (click)="closeDialog()"
+          >Home</a
+        >
+        <a
+          routerLink="about"
+          class="text-lg font-medium text-gray-800"
+          routerLinkActive="text-black font-semibold border rounded"
+          (click)="closeDialog()"
+          >About</a
+        >
+        <a
+          routerLink="contact-form"
+          class="text-lg font-medium text-gray-800"
+          routerLinkActive="text-black font-semibold border rounded"
+          (click)="closeDialog()"
+          >Contact</a
+        >
+        <a
+          routerLink="projects"
+          class="text-lg font-medium text-gray-800"
+          routerLinkActive="text-black font-semibold border rounded"
+          (click)="closeDialog()"
+          >Projects</a
+        >
       </nav>
     </div>
   </div>

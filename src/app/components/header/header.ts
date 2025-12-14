@@ -1,9 +1,10 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { DialogBox } from '../dialog-box/dialog-box';
+import { RouterLinkActive, RouterLinkWithHref } from '@angular/router';
 
 @Component({
   selector: 'app-header',
-  imports: [DialogBox],
+  imports: [DialogBox, RouterLinkActive, RouterLinkWithHref],
   templateUrl: './header.html',
   styleUrl: './header.scss',
 })

@@ -33,10 +33,31 @@
       </button>
     </div>
     <div class="hidden lg:flex lg:gap-x-12 md:flex md:gap-x-6">
-      <a href="/" class="text-sm/6 font-semibold text-black">Home</a>
-      <a href="about" class="text-sm/6 font-semibold text-black">About</a>
-      <a href="contact-form" class="text-sm/6 font-semibold text-black">Contact</a>
-      <a href="projects" class="text-sm/6 font-semibold text-black">Projects</a>
+      <a
+        routerLink="/"
+        routerLinkActive="text-black font-semibold border-b-1"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="text-sm/6 font-semibold text-black"
+        >Home</a
+      >
+      <a
+        routerLink="about"
+        routerLinkActive="text-black font-semibold border-b-1"
+        class="text-sm/6 font-semibold text-black"
+        >About</a
+      >
+      <a
+        routerLink="contact-form"
+        routerLinkActive="text-black font-semibold border-b-1"
+        class="text-sm/6 font-semibold text-black"
+        >Contact</a
+      >
+      <a
+        routerLink="projects"
+        routerLinkActive="text-black font-semibold border-b-1"
+        class="text-sm/6 font-semibold text-black"
+        >Projects</a
+      >
     </div>
   </nav>
   <app-dialog-box [isOpen]="isModalOpen" (closeModal)="closeDialogModal()"></app-dialog-box>
