@@ -1,11 +1,11 @@
 <div
-  class="main p-6 flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-40 min-h-[calc(100vh-80px)] mx-auto item-center from-gray-400 via-white to-white"
+  class="main p-6 flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-40 min-h-[calc(100vh-80px)] mx-auto item-center py-20"
 >
   <div class="grid grid-cols-1">
     <div class="image-div flex flex-col md:flex-row md:items-center gap-10 pb-8">
-      <img src="images/profile-image.jpg" alt="" class="h-48 w-48 rounded-circle" />
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-        Hey, I'm <span>{{ data.name }}</span>
+      <img src="images/profile-image.jpg" alt="User image" class="h-48 w-48 rounded-full" />
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight">
+        Hi, I'm <span>{{ data.name }}</span>
         <div class="inline-block">✨</div>
         <br />
         A <span>{{ data.role }}</span>
