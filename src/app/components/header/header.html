@@ -39,7 +39,5 @@
       <a href="projects" class="text-sm/6 font-semibold text-black">Projects</a>
     </div>
   </nav>
-  @if (isModalOpen) {
-  <app-dialog-box [openModal]="openModal" (closeModal)="closeDialogModal()"></app-dialog-box>
-  }
+  <app-dialog-box [isOpen]="isModalOpen" (closeModal)="closeDialogModal()"></app-dialog-box>
 </div>

@@ -10,9 +10,10 @@ import { Component, EventEmitter, Output, ChangeDetectionStrategy, Input } from 
 })
 export class DialogBox {
   @Output() closeModal = new EventEmitter<void>();
-  @Input() openModal!: EventEmitter<boolean>;
+  @Input() isOpen = false;
 
   closeDialog() {
+    this.isOpen = false;
     this.closeModal.emit();
   }
 }

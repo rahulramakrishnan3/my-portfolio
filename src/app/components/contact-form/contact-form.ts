@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
-import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
+import emailjs from '@emailjs/browser';
 import { environment } from '../../../environments/environment.development';
 
 @Component({
