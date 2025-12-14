@@ -50,5 +50,23 @@
         </a>
       </div>
     </div>
+    <div class="relative mt-5 inline-block">
+      <span
+        (click)="togglePopover()"
+        class="inline-flex cursor-pointer items-center gap-2 rounded-md bg-gray-400/10 px-2 py-1 text-xs font-medium text-gray-400 inset-ring inset-ring-gray-400/20"
+      >
+        <span class="relative flex h-2 w-2">
+          <span
+            class="absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75 animate-ping"
+          ></span>
+          <span class="relative inline-flex h-2 w-2 rounded-full bg-red-600"></span>
+        </span>
+        Upcoming Features !
+      </span>
+
+      @if (isPopoverOpen) {
+      <app-info-pop-over></app-info-pop-over>
+      }
+    </div>
   </div>
 </div>
