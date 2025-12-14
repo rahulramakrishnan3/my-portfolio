@@ -1,13 +1,21 @@
-@if (openModal) {
 <div
-  class="fixed inset-0 z-10 overflow-y-auto"
+  class="fixed inset-0 z-10 overflow-y-auto transition-opacity duration-500 ease-in"
   role="dialog"
   area-modal="true"
   aria-labelledby="modalTitle"
+  [class.opacity-100]="isOpen"
+  [class.opacity-0]="!isOpen"
+  [class.pointer-events-auto]="isOpen"
+  [class.pointer-events-none]="!isOpen"
 >
   <div class="fixed inset-0 w-full h-full bg-black opacity-50" (click)="closeDialog()"></div>
-  <div class="flex items-start min-h-screen" aria-modal="true" role="dialog" tabindex="-1">
-    <div class="relative w-full max-w-lg p-4 mx-auto bg-white rounded-md shadow-lg">
+  <div
+    class="flex items-start min-h-screen transform transition-transform duration-500 ease-in-out"
+    aria-modal="true"
+    role="dialog"
+    tabindex="-1"
+  >
+    <div class="relative w-full max-w-lg p-4 mx-auto bg-white rounded-md shadow-lg text-center">
       <button
         class="absolute top-2 right-2 text-gray-600 hover:text-gray-900"
         (click)="closeDialog()"
@@ -25,12 +33,36 @@
         </svg>
       </button>
       <nav class="flex flex-col space-y-4 mt-8">
-        <a href="/" class="text-lg font-medium text-gray-800">Home</a>
-        <a href="about" class="text-lg font-medium text-gray-800">About</a>
-        <a href="contact-form" class="text-lg font-medium text-gray-800">Contact</a>
-        <a href="projects" class="text-lg font-medium text-gray-800">Projects</a>
+        <a
+          routerLink="/"
+          class="text-lg font-medium text-gray-800"
+          routerLinkActive="text-black font-semibold border rounded"
+          [routerLinkActiveOptions]="{ exact: true }"
+          (click)="closeDialog()"
+          >Home</a
+        >
+        <a
+          routerLink="about"
+          class="text-lg font-medium text-gray-800"
+          routerLinkActive="text-black font-semibold border rounded"
+          (click)="closeDialog()"
+          >About</a
+        >
+        <a
+          routerLink="contact-form"
+          class="text-lg font-medium text-gray-800"
+          routerLinkActive="text-black font-semibold border rounded"
+          (click)="closeDialog()"
+          >Contact</a
+        >
+        <a
+          routerLink="projects"
+          class="text-lg font-medium text-gray-800"
+          routerLinkActive="text-black font-semibold border rounded"
+          (click)="closeDialog()"
+          >Projects</a
+        >
       </nav>
     </div>
   </div>
 </div>
-}

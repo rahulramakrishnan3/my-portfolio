@@ -1,8 +1,8 @@
-<div class="bg-white">
+<div class="lg:px-20">
   <nav aria-label="Global" class="flex items-center justify-between p-6 lg:px-8">
     <div class="flex lg:flex-1">
       <a href="/" class="-m-1.5 p-1.5 flex item-center justify-between gap-3">
-        <img class="size-8" src="images/r-icon.png" alt="" srcset="" />
+        <img class="size-8" src="images/r-icon.png" alt="User Icon" srcset="" />
         <div class="flex items-center">
           <h2 class="text-black">Rahul KR</h2>
         </div>
@@ -33,13 +33,32 @@
       </button>
     </div>
     <div class="hidden lg:flex lg:gap-x-12 md:flex md:gap-x-6">
-      <a href="/" class="text-sm/6 font-semibold text-black">Home</a>
-      <a href="about" class="text-sm/6 font-semibold text-black">About</a>
-      <a href="contact-form" class="text-sm/6 font-semibold text-black">Contact</a>
-      <a href="projects" class="text-sm/6 font-semibold text-black">Projects</a>
+      <a
+        routerLink="/"
+        routerLinkActive="text-black font-semibold border-b-1"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="text-sm/6 font-semibold text-black"
+        >Home</a
+      >
+      <a
+        routerLink="about"
+        routerLinkActive="text-black font-semibold border-b-1"
+        class="text-sm/6 font-semibold text-black"
+        >About</a
+      >
+      <a
+        routerLink="contact-form"
+        routerLinkActive="text-black font-semibold border-b-1"
+        class="text-sm/6 font-semibold text-black"
+        >Contact</a
+      >
+      <a
+        routerLink="projects"
+        routerLinkActive="text-black font-semibold border-b-1"
+        class="text-sm/6 font-semibold text-black"
+        >Projects</a
+      >
     </div>
   </nav>
-  @if (isModalOpen) {
-  <app-dialog-box [openModal]="openModal" (closeModal)="closeDialogModal()"></app-dialog-box>
-  }
+  <app-dialog-box [isOpen]="isModalOpen" (closeModal)="closeDialogModal()"></app-dialog-box>
 </div>
