@@ -33,35 +33,16 @@
         </svg>
       </button>
       <nav class="flex flex-col space-y-4 mt-8">
+        @for (item of navItems; track $index) {
         <a
-          routerLink="/"
+          [routerLink]="item.route"
           class="text-lg font-medium text-gray-800"
           routerLinkActive="text-black font-semibold border rounded"
-          [routerLinkActiveOptions]="{ exact: true }"
+          [routerLinkActiveOptions]="{ exact: item.exact ?? false }"
           (click)="closeDialog()"
-          >Home</a
+          >{{ item.label }}</a
         >
-        <a
-          routerLink="about"
-          class="text-lg font-medium text-gray-800"
-          routerLinkActive="text-black font-semibold border rounded"
-          (click)="closeDialog()"
-          >About</a
-        >
-        <a
-          routerLink="contact-form"
-          class="text-lg font-medium text-gray-800"
-          routerLinkActive="text-black font-semibold border rounded"
-          (click)="closeDialog()"
-          >Contact</a
-        >
-        <a
-          routerLink="projects"
-          class="text-lg font-medium text-gray-800"
-          routerLinkActive="text-black font-semibold border rounded"
-          (click)="closeDialog()"
-          >Projects</a
-        >
+        }
       </nav>
     </div>
   </div>

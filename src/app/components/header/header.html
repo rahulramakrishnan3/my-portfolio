@@ -4,7 +4,7 @@
       <a href="/" class="-m-1.5 p-1.5 flex item-center justify-between gap-3">
         <img class="size-8" src="images/r-icon.png" alt="User Icon" srcset="" />
         <div class="flex items-center">
-          <h2 class="text-black">Rahul KR</h2>
+          <h2 class="text-black">{{ porfolio.NAME }}</h2>
         </div>
       </a>
     </div>
@@ -32,32 +32,17 @@
         </svg>
       </button>
     </div>
-    <div class="hidden lg:flex lg:gap-x-12 md:flex md:gap-x-6">
+    <div class="hidden md:flex lg:flex gap-x-6 lg:gap-x-12">
+      @for (item of navItems; track $index) {
       <a
-        routerLink="/"
+        [routerLink]="item.route"
         routerLinkActive="text-black font-semibold border-b-1"
-        [routerLinkActiveOptions]="{ exact: true }"
+        [routerLinkActiveOptions]="{ exact: item.exact ?? false }"
         class="text-sm/6 font-semibold text-black"
-        >Home</a
       >
-      <a
-        routerLink="about"
-        routerLinkActive="text-black font-semibold border-b-1"
-        class="text-sm/6 font-semibold text-black"
-        >About</a
-      >
-      <a
-        routerLink="contact-form"
-        routerLinkActive="text-black font-semibold border-b-1"
-        class="text-sm/6 font-semibold text-black"
-        >Contact</a
-      >
-      <a
-        routerLink="projects"
-        routerLinkActive="text-black font-semibold border-b-1"
-        class="text-sm/6 font-semibold text-black"
-        >Projects</a
-      >
+        {{ item.label }}
+      </a>
+      }
     </div>
   </nav>
   <app-dialog-box [isOpen]="isModalOpen" (closeModal)="closeDialogModal()"></app-dialog-box>
