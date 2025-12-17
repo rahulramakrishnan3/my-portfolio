@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { InfoPopOver } from '../components/info-pop-over/info-pop-over';
+import { APP_CONSTANTS } from '../core/constants';
 
 @Component({
   selector: 'app-home',
@@ -10,10 +11,11 @@ import { InfoPopOver } from '../components/info-pop-over/info-pop-over';
 })
 export class Home {
   data = { title: 'home', name: 'Rahul KR', role: 'Software Developer' };
+  portfolio = APP_CONSTANTS;
 
-  isPopoverOpen = false;
+  isPopoverOpen = signal(false);
 
   togglePopover(): void {
-    this.isPopoverOpen = !this.isPopoverOpen;
+    this.isPopoverOpen = signal(!this.isPopoverOpen());
   }
 }
