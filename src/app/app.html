@@ -1,4 +1,11 @@
-<app-header></app-header>
-<main>
-  <router-outlet></router-outlet>
-</main>
+<div class="flex min-h-dvh flex-col bg-linear-to-bl from-[#ffe4e6] to-[#ccfbf1]">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 h-18 shadow-md">
+    <app-header></app-header>
+  </header>
+
+  <!-- Main content -->
+  <main class="flex-1 overflow-y-auto">
+    <router-outlet></router-outlet>
+  </main>
+</div>

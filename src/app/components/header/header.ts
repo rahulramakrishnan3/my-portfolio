@@ -12,7 +12,7 @@ import { APP_CONSTANTS, NAV_ITEMS } from '../../core/constants';
 export class Header {
   @Output() openModal = new EventEmitter<boolean>();
   isModalOpen = false;
-  porfolio = APP_CONSTANTS;
+  portfolio = APP_CONSTANTS;
   navItems = NAV_ITEMS;
 
   openDialog() {

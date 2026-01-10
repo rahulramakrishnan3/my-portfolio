@@ -1,4 +1,4 @@
-<div class="relative">
+<div class="relative left-0 top-0 w-full flex flex-col px-5 sm:px-20 xl:px-52 bg-background py-20">
   @if (toast) {
   <div
     role="alert"
@@ -11,7 +11,7 @@
         viewBox="0 0 24 24"
         stroke-width="1.5"
         stroke="currentColor"
-        class="-mt-0.5 size-6 text-green-700"
+        class="mt-0.5 size-6 text-green-700"
       >
         <path
           stroke-linecap="round"
@@ -39,7 +39,7 @@
         viewBox="0 0 24 24"
         stroke-width="1.5"
         stroke="currentColor"
-        class="-mt-0.5 size-6 text-red-700"
+        class="-mt-0.5 size-6 text-(--danger-color)"
       >
         <path
           stroke-linecap="round"
@@ -49,27 +49,25 @@
       </svg>
 
       <div class="flex-1">
-        <strong class="block leading-tight font-medium text-red-800"> Error </strong>
+        <strong class="block leading-tight font-medium text-(--danger-color)"> Error </strong>
 
-        <p class="mt-0.5 text-sm text-red-700">Oops somthing is something wrong !</p>
+        <p class="mt-0.5 text-sm text-(--danger-color)">Oops somthing is something wrong !</p>
       </div>
     </div>
   </div>
   }
 
   <div
-    class="flex flex-col p-6 gap-4 min-h-[calc(100vh-80px)] mx-auto item-center justify-center from-gray-400 via-white to-white"
+    class="flex flex-col p-6 gap-4 mx-auto item-center justify-center from-gray-400 via-white to-white"
   >
-    <h1 class="font-medium lg:w-1/2 w-full lg:mx-auto lg:justify-center md:text-4xl lg:text-4xl">
-      Let's Work Together
-    </h1>
-    <p class="lg:w-1/2 w-full lg:mx-auto lg:justify-center md:text-2xl lg:text-2xl">
+    <h2 class="font-medium w-full lg:justify-center md:text-4xl">Let's Work Together</h2>
+    <p class="w-full lg:justify-center">
       Have a project in mind or just want to chat? <br />
       Let's connect.
     </p>
     <form
       [formGroup]="myForm"
-      class="bg-slate-100 shadow-md rounded-base p-6 mb-4 flex flex-col gap-4 lg:w-1/2 w-full lg:mx-auto lg:justify-center"
+      class="bg-slate-100 shadow-md rounded-base p-6 mb-4 flex flex-col gap-4 w-full lg:justify-center"
       (ngSubmit)="onSubmit()"
     >
       <div class="grid gap-6 mb-6 md:grid-cols-2">
@@ -84,7 +82,7 @@
             required
           />
           @if (myForm.get('name')?.invalid && myForm.get('name')?.touched) {
-          <p class="mt-2.5 text-sm text-red-600 text-fg-danger-strong">
+          <p class="mt-2.5 text-sm text-(--danger-color) text-fg-danger-strong">
             <span class="font-medium">Oh, snapp!</span> Name is empty &#128519;.
           </p>
           }
@@ -100,7 +98,7 @@
             required
           />
           @if (myForm.get('email')?.invalid && myForm.get('email')?.touched) {
-          <p class="mt-2.5 text-sm text-red-600 text-fg-danger-strong">
+          <p class="mt-2.5 text-sm text-(--danger-color) text-fg-danger-strong">
             <span class="font-medium">Oh, snapp!</span> Email is empty &#128519;.
           </p>
           }
@@ -119,7 +117,7 @@
             ></textarea>
           </label>
           @if (myForm.get('message')?.invalid && myForm.get('message')?.touched) {
-          <p class="mt-2.5 text-sm text-red-600 text-fg-danger-strong">
+          <p class="mt-2.5 text-sm text-(--danger-color) text-fg-danger-strong">
             <span class="font-medium">Oh, snapp!</span> Message is empty &#128519;.
           </p>
           }
@@ -127,7 +125,7 @@
       </div>
       <button
         type="submit"
-        class="bg-white text-black box-border border border-gray-500 rounded hover:bg-brand-strong focus:ring-1 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none disabled:bg-gray-200 disabled:text-gray-400 disabled:border-gray-200 disabled:cursor-not-allowed"
+        class="bg-(--btn-color) text-(--white) box-border border rounded hover:bg-(--btn-hover-color) focus:ring-1 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base text-sm px-4 py-2.5 focus:outline-none disabled:bg-(--btn-disabled-color) disabled:text-(--btn-text-disabled-color) disabled:border-(--btn-disabled-color) disabled:cursor-not-allowed"
         [disabled]="myForm.invalid && !isLoading"
       >
         @if (!isLoading) {
