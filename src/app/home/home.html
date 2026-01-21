@@ -9,12 +9,12 @@
       <h1 class="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight">
         Hi, I'm <span>{{ portfolio.NAME }}</span>
         <br />
-        An <span class="text-(--text-red-800) font-semibold">{{ portfolio.ROLE }}</span>
+        An <span class="text-(--primary-color) font-semibold">{{ portfolio.ROLE }}</span>
       </h1>
     </div>
-    <p class="text-lg mt-4 mb-6 max-w-[750px] bg-foreground gradient-text-white">
+    <p class="text-lg mt-4 mb-6 max-w-[750px]">
       A Software Developer with solid foundation in
-      <span class="text-(--text-red-800) font-semibold">Angular</span>. <br />Passionate about
+      <span class="text-(--primary-color) font-semibold">Angular</span>. <br />Passionate about
       crafting seamless user experience.
     </p>
     <div
@@ -24,16 +24,16 @@
         <a href="RESUME_FD_KL.pdf"
           ><button
             type="button"
-            class="cursor-pointer text-(--white) bg-(--btn-color) hover:bg-(--btn-hover-color) box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-full text-sm px-4 py-2.5 focus:outline-none flex items-center gap-2 hover:-translate-y-1"
+            class="cursor-pointer text-(--primary-color) bg-(--btn-color) hover:bg-(--secondary-color) box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-full text-sm px-4 py-2.5 focus:outline-none flex items-center gap-2 hover:-translate-y-1"
           >
-            <span class="text-(--white)">&#10515;</span>
+            <span class="text-(--primary-color)">&#10515;</span>
             Download CV
           </button></a
         >
         <a href="mailto:rahulramakrishnan512@gmail.com"
           ><button
             type="button"
-            class="cursor-pointer text-(--white) bg-(--btn-color) hover:bg-(--btn-hover-color) box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-full text-sm px-4 py-2.5 focus:outline-none hover:-translate-y-1"
+            class="cursor-pointer text-(--primary-color) bg-(--btn-color) hover:bg-(--secondary-color) box-border border border-default-medium hover:bg-neutral-tertiary-medium hover:text-heading focus:ring-4 focus:ring-neutral-tertiary shadow-xs font-medium leading-5 rounded-full text-sm px-4 py-2.5 focus:outline-none hover:-translate-y-1"
           >
             @ Contact Me
           </button></a
@@ -54,7 +54,7 @@
     <div class="relative mt-5 inline-block">
       <button
         (click)="togglePopover()"
-        class="inline-flex cursor-pointer items-center gap-2 rounded-md bg-gray-400/10 px-2 py-1 text-xs font-medium text-gray-400 inset-ring inset-ring-gray-400/20 hover:-translate-y-1"
+        class="inline-flex cursor-pointer items-center gap-2 rounded-md bg-(--primary-color) px-2 py-1 text-xs font-medium text-(--background-color) inset-ring inset-ring-(--primary-color)/20 hover:-translate-y-1"
       >
         <span class="relative flex h-2 w-2">
           <span
@@ -66,7 +66,7 @@
       </button>
 
       @if (isPopoverOpen()) {
-      <app-info-pop-over></app-info-pop-over>
+        <app-info-pop-over></app-info-pop-over>
       }
     </div>
   </div>

@@ -1,6 +1,7 @@
 @import 'tailwindcss';
 
 :root {
+  color: white;
   --font-pj: 'Poppins', sans-serif;
   --font-roboto: 'Roboto', sans-serif;
   --primary-color: #00ffff;
