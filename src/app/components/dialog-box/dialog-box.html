@@ -8,7 +8,10 @@
   [class.pointer-events-auto]="isOpen"
   [class.pointer-events-none]="!isOpen"
 >
-  <div class="fixed inset-0 w-full h-full bg-black opacity-50" (click)="closeDialog()"></div>
+  <div
+    class="fixed inset-0 w-full h-full bg-(--secondary-color) opacity-50"
+    (click)="closeDialog()"
+  ></div>
   <div
     class="flex items-start min-h-screen transform transition-transform duration-500 ease-in-out"
     aria-modal="true"
@@ -16,10 +19,10 @@
     tabindex="-1"
   >
     <div
-      class="relative w-full max-w-lg p-4 mx-auto rounded-md shadow-lg text-center bg-linear-to-bl from-[#ffe4e6] to-[#ccfbf1]"
+      class="relative w-full max-w-lg p-4 mx-auto rounded-md shadow-lg text-center bg-(--background-color)"
     >
       <button
-        class="absolute top-2 right-2 text-gray-600 hover:text-gray-900"
+        class="absolute top-2 right-2 text-(--primary-color) hover:text-(--btn-hover-color)"
         (click)="closeDialog()"
       >
         <span class="sr-only">Close</span>
@@ -36,14 +39,14 @@
       </button>
       <nav class="flex flex-col space-y-4 mt-8">
         @for (item of navItems; track $index) {
-        <a
-          [routerLink]="item.route"
-          class="text-lg font-medium text-gray-800"
-          routerLinkActive="text-black font-semibold border rounded"
-          [routerLinkActiveOptions]="{ exact: item.exact ?? false }"
-          (click)="closeDialog()"
-          >{{ item.label }}</a
-        >
+          <a
+            [routerLink]="item.route"
+            class="text-lg font-medium text-(--primary-color)"
+            routerLinkActive="text-(--secondary-color) font-semibold border rounded bg-(--primary-color) px-4 py-2"
+            [routerLinkActiveOptions]="{ exact: item.exact ?? false }"
+            (click)="closeDialog()"
+            >{{ item.label }}</a
+          >
         }
       </nav>
     </div>
