@@ -1,9 +1,9 @@
-<div class="md:px-20 -z-50 relative bg-(--background-color)">
+<div class="md:px-16 lg:px-18 xl:px-20 z-50 relative bg-(--background-color)">
   <nav aria-label="Global" class="flex items-center justify-between p-6 md:px-3 lg:px-8">
     <div class="flex md:flex-1">
       <a href="/" class="-m-1.5 p-1.5 flex item-center justify-between gap-3">
         <div class="flex items-center">
-          <h2 class="text-(--primary-color) text-xl font-bold">{{ portfolio.NAME }}</h2>
+          <h2 class="text-(--primary-color) text-2xl font-extrabold tracking-tight drop-shadow-[0_0_15px_rgba(0,255,255,0.5)]">{{ portfolio.NAME }}</h2>
         </div>
       </a>
     </div>
@@ -31,13 +31,13 @@
         </svg>
       </button>
     </div>
-    <div class="hidden md:flex lg:flex gap-x-6 lg:gap-x-12">
+    <div class="hidden md:flex lg:flex md:gap-3 gap-x-6 lg:gap-x-12">
       @for (item of navItems; track $index) {
         <a
           [routerLink]="item.route"
-          routerLinkActive="font-semibold border-b-1 bg-(--primary-color) text-(--background-color)"
+          routerLinkActive="font-semibold text-(--primary-color) bg-(--primary-color)/10 border-(--primary-color) shadow-[0_0_10px_rgba(0,255,255,0.3)]"
           [routerLinkActiveOptions]="{ exact: item.exact ?? false }"
-          class="relative z-10 inline-flex items-center justify-center w-full px-8 py-3 font-bold text-(--secondary-color) transition-all duration-200 bg-(--primary-color) border-2 border-transparent sm:w-auto rounded-xl font-pj hover:bg-(--btn-hover-color) hover:text-(--background-color) focus:outline-none text-sm/2"
+          class="relative z-10 inline-flex items-center justify-center w-full px-8 py-3 font-bold text-gray-300 transition-all duration-300 border-2 border-transparent hover:border-(--primary-color)/50 sm:w-auto rounded-xl hover:text-(--primary-color) hover:bg-(--primary-color)/5 hover:shadow-[0_0_15px_rgba(0,255,255,0.2)] focus:outline-none text-sm/2 hover:-translate-y-1"
         >
           {{ item.label }}
         </a>

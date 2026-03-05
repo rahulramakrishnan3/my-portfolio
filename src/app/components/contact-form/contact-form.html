@@ -1,4 +1,4 @@
-<div class="relative left-0 top-0 w-full flex flex-col px-5 sm:px-20 xl:px-52 bg-background py-20">
+<div class="relative left-0 top-0 w-full flex flex-col px-5 sm:px-20 xl:px-52 bg-transparent py-20">
   @if (toast) {
   <div
     role="alert"
@@ -58,25 +58,25 @@
   }
 
   <div
-    class="flex flex-col p-6 gap-4 mx-auto item-center justify-center from-gray-400 via-white to-white"
+    class="flex flex-col p-6 gap-4 mx-auto items-center justify-center text-center animate-fade-in-up"
   >
-    <h2 class="font-medium w-full lg:justify-center md:text-4xl">Let's Work Together</h2>
-    <p class="w-full lg:justify-center">
+    <h2 class="font-medium w-full text-3xl md:text-5xl tracking-tight text-white mb-2">Let's Work Together</h2>
+    <p class="w-full text-gray-400 text-lg max-w-xl animate-fade-in-up-delay-1">
       Have a project in mind or just want to chat? <br />
       Let's connect.
     </p>
     <form
       [formGroup]="myForm"
-      class="bg-slate-100 shadow-md rounded-base p-6 mb-4 flex flex-col gap-4 w-full lg:justify-center"
+      class="bg-white/5 border border-white/10 backdrop-blur-xl shadow-2xl rounded-2xl p-8 mb-4 flex flex-col gap-6 w-full max-w-3xl mt-8 text-left animate-fade-in-up-delay-2"
       (ngSubmit)="onSubmit()"
     >
-      <div class="grid gap-6 mb-6 md:grid-cols-2">
+      <div class="grid gap-6 md:grid-cols-2">
         <div>
-          <label for="name" class="block mb-2.5 text-sm font-medium text-heading">Name</label>
+          <label for="name" class="block mb-2 text-sm font-medium text-gray-300">Name</label>
           <input
             type="text"
             id="name"
-            class="border-gray-300 rounded border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
+            class="bg-white/5 border border-white/10 text-white text-sm rounded-lg focus:ring-(--primary-color) focus:border-(--primary-color) block w-full px-4 py-3 placeholder:text-gray-500 transition-colors"
             placeholder="Your Name"
             formControlName="name"
             required
@@ -88,11 +88,11 @@
           }
         </div>
         <div>
-          <label for="email" class="block mb-2.5 text-sm font-medium text-heading">Email</label>
+          <label for="email" class="block mb-2 text-sm font-medium text-gray-300">Email</label>
           <input
             type="email"
             id="email"
-            class="border-gray-300 rounded border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full px-3 py-2.5 shadow-xs placeholder:text-body"
+            class="bg-white/5 border border-white/10 text-white text-sm rounded-lg focus:ring-(--primary-color) focus:border-(--primary-color) block w-full px-4 py-3 placeholder:text-gray-500 transition-colors"
             placeholder="contact@example.com"
             formControlName="email"
             required
@@ -103,19 +103,18 @@
           </p>
           }
         </div>
-        <div>
-          <label for="Notes">
-            <span class="text-sm font-medium"> Message </span>
-
-            <textarea
-              id="Notes"
-              class="bg-white mt-0.5 w-full resize-none rounded border-gray-300 shadow-sm sm:text-sm"
-              rows="4"
-              required
-              placeholder="Your message..."
-              formControlName="message"
-            ></textarea>
+        <div class="md:col-span-2">
+          <label for="Notes" class="block mb-2 text-sm font-medium text-gray-300">
+            Message
           </label>
+          <textarea
+            id="Notes"
+            class="bg-white/5 border border-white/10 text-white text-sm rounded-lg focus:ring-(--primary-color) focus:border-(--primary-color) block w-full px-4 py-3 placeholder:text-gray-500 resize-none transition-colors"
+            rows="5"
+            required
+            placeholder="Your message..."
+            formControlName="message"
+          ></textarea>
           @if (myForm.get('message')?.invalid && myForm.get('message')?.touched) {
           <p class="mt-2.5 text-sm text-(--danger-color) text-fg-danger-strong">
             <span class="font-medium">Oh, snapp!</span> Message is empty &#128519;.
