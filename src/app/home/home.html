@@ -22,7 +22,7 @@
       class="flex flex-col gap-4 lg:gap-0 lg:flex-row lg:items-center justify-between max-w-[600px] mt-8 animate-fade-in-up-delay-2"
     >
       <div class="flex gap-3">
-        <a href="RESUME_FD_KL.pdf"
+        <a [href]="data.profile.resumeUrl" download target="_blank"
           ><button
             type="button"
             class="cursor-pointer text-(--primary-color) border-2 border-(--primary-color) dark:shadow-[0_0_15px_rgba(0,255,255,0.15)] dark:hover:shadow-[0_0_20px_rgba(0,255,255,0.4)] shadow-sm hover:shadow-md hover:bg-(--primary-color) hover:text-white dark:hover:text-black transition-all duration-300 font-semibold leading-5 rounded-full text-sm px-6 py-3 focus:outline-none flex items-center gap-2 hover:-translate-y-1"
