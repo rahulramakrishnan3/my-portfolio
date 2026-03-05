@@ -4,7 +4,7 @@ import { Injectable, inject, signal } from '@angular/core';
 export interface PortfolioData {
   profile: { name: string; role: string; tagline: string };
   socialLinks: { github: string; instagram: string; linkedin: string };
-  navItems: { label: string; route: string; exact: boolean }[];
+  navItems: { label: string; route: string; exact?: boolean }[];
   aboutCards: {
     id: number;
     title: string;
