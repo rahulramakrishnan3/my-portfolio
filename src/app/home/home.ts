@@ -1,11 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component, signal } from '@angular/core';
-import { InfoPopOver } from '../components/info-pop-over/info-pop-over';
 import { APP_CONSTANTS } from '../core/constants';
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule, InfoPopOver],
+  imports: [CommonModule],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
