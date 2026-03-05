@@ -1,5 +1,5 @@
-<div class="md:px-16 lg:px-18 xl:px-20 z-50 relative bg-white/70 dark:bg-black/80 backdrop-blur-xl border-b border-gray-200 dark:border-white/10 transition-colors duration-300">
-  <nav aria-label="Global" class="flex items-center justify-between p-6 md:px-3 lg:px-8">
+<div class="md:px-4 lg:px-6 xl:px-20 z-50 relative bg-white/70 dark:bg-black/80 backdrop-blur-xl border-b border-gray-200 dark:border-white/10 transition-colors duration-300">
+  <nav aria-label="Global" class="flex items-center justify-between p-6 md:px-3 lg:px-4 xl:px-8">
     <div class="flex md:flex-1">
       <a href="/" class="-m-1.5 p-1.5 flex item-center justify-between gap-3">
         <div class="flex items-center">
@@ -47,14 +47,14 @@
         </svg>
       </button>
     </div>
-    <div class="hidden md:flex lg:flex md:gap-3 gap-x-6 lg:gap-x-12 items-center">
+    <div class="hidden md:flex lg:flex md:gap-1 lg:gap-1 xl:gap-x-12 items-center">
       @if (portfolioData(); as data) {
         @for (item of data.navItems; track $index) {
           <a
             [routerLink]="item.route"
             routerLinkActive="!text-white dark:!text-black !bg-(--primary-color) !border-(--primary-color)"
             [routerLinkActiveOptions]="{ exact: item.exact ?? false }"
-            class="relative z-10 inline-flex items-center justify-center w-full px-8 py-3 font-bold text-gray-600 dark:text-gray-300 transition-all duration-300 border-2 border-transparent hover:border-(--primary-color)/50 sm:w-auto rounded-xl hover:text-(--primary-color) dark:hover:text-(--primary-color) hover:bg-(--primary-color)/10 focus:outline-none text-sm/2 hover:-translate-y-0.5"
+            class="relative z-10 inline-flex items-center justify-center w-full md:px-3 md:py-2 lg:px-3 lg:py-2 xl:px-8 xl:py-3 font-bold text-gray-600 dark:text-gray-300 transition-all duration-300 border-2 border-transparent hover:border-(--primary-color)/50 sm:w-auto rounded-xl hover:text-(--primary-color) dark:hover:text-(--primary-color) hover:bg-(--primary-color)/10 focus:outline-none text-sm/2 hover:-translate-y-0.5"
           >
             {{ item.label }}
           </a>
@@ -67,7 +67,7 @@
             [href]="resumeUrl"
             download
             target="_blank"
-            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold border-2 border-(--primary-color) text-(--primary-color) hover:bg-(--primary-color) hover:text-white dark:hover:text-black transition-all duration-300 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-(--primary-color)"
+            class="inline-flex items-center gap-2 md:px-3 md:py-2 lg:px-3 lg:py-2 xl:px-5 xl:py-2.5 rounded-xl text-sm font-bold border-2 border-(--primary-color) text-(--primary-color) hover:bg-(--primary-color) hover:text-white dark:hover:text-black transition-all duration-300 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-(--primary-color)"
           >
             <svg xmlns="http://www.w3.org/2000/svg" class="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
