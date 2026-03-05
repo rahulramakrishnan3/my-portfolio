@@ -1,3 +1,4 @@
+@if (portfolioData(); as data) {
 <div class="flex flex-col px-5 sm:px-20 xl:px-52 bg-transparent py-20">
   <div class="text-center md:text-left animate-fade-in-up">
     <h1 class="text-4xl font-bold mb-4">Build Digital Experiences</h1>
@@ -8,7 +9,7 @@
   </div>
 
   <div class="grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-12 pt-12">
-    @for (item of cardDetails; track item.id) {
+    @for (item of data.aboutCards; track item.id) {
     <div
       class="flex flex-col border border-white/10 bg-white/5 rounded-xl p-8 backdrop-blur-3xl animate-fade-in-up-delay-1 hover:-translate-y-2 transition-all duration-300 hover:bg-white/10 hover:shadow-[0_8px_30px_rgb(0,0,0,0.5)] hover:border-(--primary-color)/30"
     >
@@ -30,3 +31,8 @@
     }
   </div>
 </div>
+} @else {
+  <div class="min-h-full flex items-center justify-center p-6 py-20">
+    <div class="animate-pulse w-32 h-32 rounded-xl bg-gray-800"></div>
+  </div>
+}

@@ -1,3 +1,4 @@
+@if (portfolioData(); as data) {
 <div
   class="min-h-full flex items-center justify-center p-6 flex-col gap-10 md:flex-col sm:flex-col lg:flex-col lg:gap-40 xl:flex-row mx-auto py-20"
 >
@@ -7,9 +8,9 @@
   <div class="grid grid-cols-1">
     <div class="image-div flex flex-col md:flex-row md:items-center gap-10 pb-8 animate-fade-in-up">
       <h1 class="text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight">
-        Hi, I'm <span>{{ portfolio.NAME }}</span>
+        Hi, I'm <span>{{ data.profile.name }}</span>
         <br />
-        An <span class="text-(--primary-color) font-semibold">{{ portfolio.ROLE }}</span>
+        An <span class="text-(--primary-color) font-semibold">{{ data.profile.role }}</span>
       </h1>
     </div>
     <p class="text-lg mt-4 mb-6 max-w-[750px] animate-fade-in-up-delay-1">
@@ -41,42 +42,33 @@
       </div>
       <div class="flex gap-4 animate-fade-in-up-delay-3">
         <a
-          href="https://github.com/rahulramakrishnan3"
+          [href]="data.socialLinks.github"
+          target="_blank"
           class="h-8 w-8 inline-block mr-4 hover:-translate-y-1 transition-transform duration-300 hover:scale-110"
         >
           <img src="icons/github.svg" alt="GitHub" class="brightness-0 invert opacity-80 hover:opacity-100 transition-opacity" />
         </a>
         <a
-          href="https://www.instagram.com/rahulramakrishnan._"
+          [href]="data.socialLinks.instagram"
+          target="_blank"
           class="h-8 w-8 inline-block mr-4 hover:-translate-y-1 transition-transform duration-300 hover:scale-110"
         >
           <img src="icons/instagram.svg" alt="Instagram" class="brightness-0 invert opacity-80 hover:opacity-100 transition-opacity" />
         </a>
         <a
-          href="https://www.linkedin.com/in/rahulramakrishnan3"
+          [href]="data.socialLinks.linkedin"
+          target="_blank"
           class="h-8 w-8 inline-block mr-4 hover:-translate-y-1 transition-transform duration-300 hover:scale-110"
         >
           <img src="icons/linkedin.svg" alt="LinkedIn" class="brightness-0 invert opacity-80 hover:opacity-100 transition-opacity" />
         </a>
       </div>
     </div>
-    <!-- <div class="relative mt-5 inline-block">
-      <button
-        (click)="togglePopover()"
-        class="inline-flex cursor-pointer items-center gap-2 rounded-md bg-(--primary-color) px-2 py-1 text-xs font-medium text-(--background-color) inset-ring inset-ring-(--primary-color)/20 hover:-translate-y-1"
-      >
-        <span class="relative flex h-2 w-2">
-          <span
-            class="absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75 animate-ping"
-          ></span>
-          <span class="relative inline-flex h-2 w-2 rounded-full bg-red-600"></span>
-        </span>
-        Upcoming Features !
-      </button>
-
-      @if (isPopoverOpen()) {
-        <app-info-pop-over class="relative"></app-info-pop-over>
-      }
-    </div> -->
+    <!-- <div class="relative mt-5 inline-block"> ... </div> -->
   </div>
 </div>
+} @else {
+  <div class="min-h-full flex items-center justify-center p-6 py-20">
+    <div class="animate-pulse w-32 h-32 rounded-full bg-gray-800"></div>
+  </div>
+}

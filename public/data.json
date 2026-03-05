@@ -1,0 +1,93 @@
+{
+    "profile": {
+        "name": "Rahul KR",
+        "role": "Angular Developer",
+        "tagline": "A Software Developer with solid foundation in Angular. Passionate about crafting seamless user experience."
+    },
+    "socialLinks": {
+        "github": "https://github.com/rahulramakrishnan3",
+        "instagram": "https://www.instagram.com/rahulramakrishnan._",
+        "linkedin": "https://www.linkedin.com/in/rahulramakrishnan3"
+    },
+    "navItems": [
+        {
+            "label": "Home",
+            "route": "/",
+            "exact": true
+        },
+        {
+            "label": "About",
+            "route": "/about",
+            "exact": false
+        },
+        {
+            "label": "Contact",
+            "route": "/contact-form",
+            "exact": false
+        },
+        {
+            "label": "Projects",
+            "route": "/projects",
+            "exact": false
+        }
+    ],
+    "aboutCards": [
+        {
+            "id": 1,
+            "title": "What I can do",
+            "icon": "svgs/what_i_can_do.svg",
+            "description": "I am proficient in front-end development using Angular. I create responsive and user-friendly web applications that provide seamless user experiences across devices.",
+            "list": [
+                "UI/UX",
+                "Web Development",
+                "Mobile Development",
+                "Api Integration"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Tools I use",
+            "icon": "svgs/buffer-color-svgrepo-com.svg",
+            "description": "I have a strong foundation in HTML, CSS, and JavaScript, along with experience in TypeScript. I am skilled in using modern frameworks and libraries to build dynamic and interactive web applications.",
+            "list": [
+                "Angular",
+                "TypeScript",
+                "JavaScript",
+                "Tailwind CSS",
+                "Angular Material",
+                "Git"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Development Practices",
+            "icon": "svgs/color-palette-svgrepo-com.svg",
+            "description": "I follow best practices in web development, including version control with Git, agile methodologies. I prioritize code quality, performance optimization, and user-centric design in my workflow.",
+            "list": [
+                "Agile",
+                "Responsive Design",
+                "Performance Optimization"
+            ]
+        }
+    ],
+    "projects": [
+        {
+            "title": "MentorED Mobile Application",
+            "description": "Front-End Developer specializing in Angular with strong expertise in HTML, CSS, JavaScript, TypeScript and Ionic framework. Skilled in designing and integrating RESTful APIs and proficient in version control using Git and GitHub. Experienced in leveraging RxJS, NPM, Angular CLI, and Angular Material to build scalable, interactive, and responsive web applications.",
+            "link": "https://elevate-shikshagraha.shikshalokam.org/",
+            "btnLabel": "Shikshagraha"
+        },
+        {
+            "title": "MentorED Portal",
+            "description": "Front-End Developer specializing in Angular with strong expertise in HTML, CSS, JavaScript, and TypeScript. Skilled in designing and integrating RESTful APIs and proficient in version control using Git and GitHub. Experienced in leveraging RxJS, NPM, Angular CLI, and Angular Material to build scalable, interactive, and responsive web applications.",
+            "link": "https://github.com/rahulramakrishnan3/mentorED-Portal",
+            "btnLabel": "Github"
+        },
+        {
+            "title": "My Portfolio",
+            "description": "This portfolio is build using angular 20 and Tailwind css",
+            "link": "https://github.com/rahulramakrishnan3/my-portfolio",
+            "btnLabel": "Portfolio"
+        }
+    ]
+}

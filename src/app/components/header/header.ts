@@ -1,7 +1,7 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output, inject } from '@angular/core';
 import { DialogBox } from '../dialog-box/dialog-box';
 import { RouterLinkActive, RouterLinkWithHref } from '@angular/router';
-import { APP_CONSTANTS, NAV_ITEMS } from '../../core/constants';
+import { PortfolioService } from '../../core/portfolio.service';
 
 @Component({
   selector: 'app-header',
@@ -10,10 +10,11 @@ import { APP_CONSTANTS, NAV_ITEMS } from '../../core/constants';
   styleUrl: './header.scss',
 })
 export class Header {
+  private portfolioService = inject(PortfolioService);
+  portfolioData = this.portfolioService.portfolioData;
+
   @Output() openModal = new EventEmitter<boolean>();
   isModalOpen = false;
-  portfolio = APP_CONSTANTS;
-  navItems = NAV_ITEMS;
 
   openDialog() {
     this.isModalOpen = true;

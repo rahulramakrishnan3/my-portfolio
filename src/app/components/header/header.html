@@ -3,7 +3,11 @@
     <div class="flex md:flex-1">
       <a href="/" class="-m-1.5 p-1.5 flex item-center justify-between gap-3">
         <div class="flex items-center">
-          <h2 class="text-(--primary-color) text-2xl font-extrabold tracking-tight drop-shadow-[0_0_15px_rgba(0,255,255,0.5)]">{{ portfolio.NAME }}</h2>
+          <h2 class="text-(--primary-color) text-2xl font-extrabold tracking-tight drop-shadow-[0_0_15px_rgba(0,255,255,0.5)]">
+            @if (portfolioData(); as data) {
+              {{ data.profile.name }}
+            }
+          </h2>
         </div>
       </a>
     </div>
@@ -32,15 +36,17 @@
       </button>
     </div>
     <div class="hidden md:flex lg:flex md:gap-3 gap-x-6 lg:gap-x-12">
-      @for (item of navItems; track $index) {
-        <a
-          [routerLink]="item.route"
-          routerLinkActive="font-semibold text-(--primary-color) bg-(--primary-color)/10 border-(--primary-color) shadow-[0_0_10px_rgba(0,255,255,0.3)]"
-          [routerLinkActiveOptions]="{ exact: item.exact ?? false }"
-          class="relative z-10 inline-flex items-center justify-center w-full px-8 py-3 font-bold text-gray-300 transition-all duration-300 border-2 border-transparent hover:border-(--primary-color)/50 sm:w-auto rounded-xl hover:text-(--primary-color) hover:bg-(--primary-color)/5 hover:shadow-[0_0_15px_rgba(0,255,255,0.2)] focus:outline-none text-sm/2 hover:-translate-y-1"
-        >
-          {{ item.label }}
-        </a>
+      @if (portfolioData(); as data) {
+        @for (item of data.navItems; track $index) {
+          <a
+            [routerLink]="item.route"
+            routerLinkActive="font-semibold text-(--primary-color) bg-(--primary-color)/10 border-(--primary-color) shadow-[0_0_10px_rgba(0,255,255,0.3)]"
+            [routerLinkActiveOptions]="{ exact: item.exact }"
+            class="relative z-10 inline-flex items-center justify-center w-full px-8 py-3 font-bold text-gray-300 transition-all duration-300 border-2 border-transparent hover:border-(--primary-color)/50 sm:w-auto rounded-xl hover:text-(--primary-color) hover:bg-(--primary-color)/5 hover:shadow-[0_0_15px_rgba(0,255,255,0.2)] focus:outline-none text-sm/2 hover:-translate-y-1"
+          >
+            {{ item.label }}
+          </a>
+        }
       }
     </div>
   </nav>

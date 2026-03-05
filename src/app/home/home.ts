@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, signal } from '@angular/core';
-import { APP_CONSTANTS } from '../core/constants';
+import { Component, inject, signal } from '@angular/core';
+import { PortfolioService } from '../core/portfolio.service';
 
 @Component({
   selector: 'app-home',
@@ -9,8 +9,10 @@ import { APP_CONSTANTS } from '../core/constants';
   styleUrl: './home.scss',
 })
 export class Home {
-  data = { title: 'home', name: 'Rahul KR', role: 'Software Developer' };
-  portfolio = APP_CONSTANTS;
+  private portfolioService = inject(PortfolioService);
+  
+  // Expose the read-only signal to the template
+  portfolioData = this.portfolioService.portfolioData;
 
   isPopoverOpen = signal(false);
 
