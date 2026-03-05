@@ -1,13 +1,13 @@
+<!-- Background -->
 <div class="fixed inset-0 z-[-1] bg-gray-50 dark:bg-black transition-colors duration-300">
   <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(0,255,255,0.05),rgba(0,0,0,0))] dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(0,255,255,0.15),rgba(0,0,0,0))]"></div>
 </div>
-<div class="flex min-h-dvh flex-col relative z-10 w-full text-gray-900 dark:text-white transition-colors duration-300">
-  <!-- Header -->
-  <header class="sticky top-0 z-50 h-18 shadow-md">
-    <app-header></app-header>
-  </header>
 
-  <!-- Main content -->
+<!-- Sidebar + Mobile Bottom Bar -->
+<app-sidebar-nav></app-sidebar-nav>
+
+<!-- Main content — offset from sidebar on md+, add bottom padding on mobile for bottom bar -->
+<div class="md:ml-[72px] xl:ml-[240px] pb-[72px] md:pb-0 min-h-dvh text-gray-900 dark:text-white transition-colors duration-300 relative z-10">
   <main>
     <router-outlet></router-outlet>
   </main>

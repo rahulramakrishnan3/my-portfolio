@@ -34,6 +34,11 @@ html {
   }
 }
 
+@keyframes floatBob {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
 @theme {
   --color-primary: #00ffff;
   --color-primary-hover: #40faf1;
