@@ -1,6 +1,6 @@
 @if (portfolioData(); as data) {
 <div class="flex flex-col border-none px-5 sm:px-20 xl:px-52 bg-transparent py-20 animate-fade-in-up">
-  <h2 class="text-3xl font-bold mb-2 text-white">Projects</h2>
+  <h2 class="text-3xl font-bold mb-2 text-gray-900 dark:text-white transition-colors">Projects</h2>
 
   <div class="grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-12 pt-12 animate-fade-in-up-delay-1">
     @for (item of data.projects; track $index) {

@@ -3,6 +3,8 @@ import { DialogBox } from '../dialog-box/dialog-box';
 import { RouterLinkActive, RouterLinkWithHref } from '@angular/router';
 import { PortfolioService } from '../../core/portfolio.service';
 
+import { ThemeService } from '../../core/theme.service';
+
 @Component({
   selector: 'app-header',
   imports: [DialogBox, RouterLinkActive, RouterLinkWithHref],
@@ -11,7 +13,10 @@ import { PortfolioService } from '../../core/portfolio.service';
 })
 export class Header {
   private portfolioService = inject(PortfolioService);
+  public themeService = inject(ThemeService);
+  
   portfolioData = this.portfolioService.portfolioData;
+  isDarkMode = this.themeService.isDarkMode;
 
   @Output() openModal = new EventEmitter<boolean>();
   isModalOpen = false;

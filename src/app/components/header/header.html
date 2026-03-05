@@ -1,9 +1,9 @@
-<div class="md:px-16 lg:px-18 xl:px-20 z-50 relative bg-(--background-color)">
+<div class="md:px-16 lg:px-18 xl:px-20 z-50 relative bg-white/70 dark:bg-black/80 backdrop-blur-xl border-b border-gray-200 dark:border-white/10 transition-colors duration-300">
   <nav aria-label="Global" class="flex items-center justify-between p-6 md:px-3 lg:px-8">
     <div class="flex md:flex-1">
       <a href="/" class="-m-1.5 p-1.5 flex item-center justify-between gap-3">
         <div class="flex items-center">
-          <h2 class="text-(--primary-color) text-2xl font-extrabold tracking-tight drop-shadow-[0_0_15px_rgba(0,255,255,0.5)]">
+          <h2 class="text-(--primary-color) text-2xl font-extrabold tracking-tight dark:drop-shadow-[0_0_15px_rgba(0,255,255,0.5)]">
             @if (portfolioData(); as data) {
               {{ data.profile.name }}
             }
@@ -11,10 +11,22 @@
         </div>
       </a>
     </div>
-    <div class="flex lg:hidden md:hidden">
+    <div class="flex lg:hidden md:hidden gap-4 items-center">
+      <!-- Theme Toggle (Mobile) -->
+      <button (click)="themeService.toggleTheme()" class="rounded-full p-2 text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-white/10 transition-colors">
+        @if (isDarkMode()) {
+        <!-- Sun Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" /></svg>
+        } @else {
+        <!-- Moon Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6"><path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" /></svg>
+        }
+      </button>
+
+      <!-- Mobile Menu Button -->
       <button
         type="button"
-        class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-(--secondary-color) hover:bg-(--btn-hover-color) focus:outline-none focus:ring-2 focus:ring-inset focus:ring-(--primary-color)"
+        class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700 dark:text-(--secondary-color) hover:bg-gray-100 dark:hover:bg-(--btn-hover-color) focus:outline-none focus:ring-2 focus:ring-inset focus:ring-(--primary-color)"
         (click)="openDialog()"
       >
         <span class="sr-only">Open main menu</span>
@@ -35,19 +47,29 @@
         </svg>
       </button>
     </div>
-    <div class="hidden md:flex lg:flex md:gap-3 gap-x-6 lg:gap-x-12">
+    <div class="hidden md:flex lg:flex md:gap-3 gap-x-6 lg:gap-x-12 items-center">
       @if (portfolioData(); as data) {
         @for (item of data.navItems; track $index) {
           <a
             [routerLink]="item.route"
-            routerLinkActive="font-semibold text-(--primary-color) bg-(--primary-color)/10 border-(--primary-color) shadow-[0_0_10px_rgba(0,255,255,0.3)]"
+            routerLinkActive="!text-white dark:!text-black !bg-(--primary-color) !border-(--primary-color)"
             [routerLinkActiveOptions]="{ exact: item.exact }"
-            class="relative z-10 inline-flex items-center justify-center w-full px-8 py-3 font-bold text-gray-300 transition-all duration-300 border-2 border-transparent hover:border-(--primary-color)/50 sm:w-auto rounded-xl hover:text-(--primary-color) hover:bg-(--primary-color)/5 hover:shadow-[0_0_15px_rgba(0,255,255,0.2)] focus:outline-none text-sm/2 hover:-translate-y-1"
+            class="relative z-10 inline-flex items-center justify-center w-full px-8 py-3 font-bold text-gray-600 dark:text-gray-300 transition-all duration-300 border-2 border-transparent hover:border-(--primary-color)/50 sm:w-auto rounded-xl hover:text-(--primary-color) dark:hover:text-(--primary-color) hover:bg-(--primary-color)/10 focus:outline-none text-sm/2 hover:-translate-y-0.5"
           >
             {{ item.label }}
           </a>
         }
       }
+      <!-- Theme Toggle (Desktop) -->
+      <button (click)="themeService.toggleTheme()" class="ml-4 rounded-full p-2.5 text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-white/10 transition-all hover:scale-110 active:scale-95 focus:outline-none focus:ring-2 focus:ring-(--primary-color)">
+        @if (isDarkMode()) {
+        <!-- Sun Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" /></svg>
+        } @else {
+        <!-- Moon Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" /></svg>
+        }
+      </button>
     </div>
   </nav>
   <app-dialog-box [isOpen]="isModalOpen" (closeModal)="closeDialogModal()"></app-dialog-box>

@@ -60,23 +60,23 @@
   <div
     class="flex flex-col p-6 gap-4 mx-auto items-center justify-center text-center animate-fade-in-up"
   >
-    <h2 class="font-medium w-full text-3xl md:text-5xl tracking-tight text-white mb-2">Let's Work Together</h2>
-    <p class="w-full text-gray-400 text-lg max-w-xl animate-fade-in-up-delay-1">
+    <h2 class="font-medium w-full text-3xl md:text-5xl tracking-tight text-gray-900 dark:text-white mb-2 transition-colors">Let's Work Together</h2>
+    <p class="w-full text-gray-600 dark:text-gray-400 text-lg max-w-xl animate-fade-in-up-delay-1 transition-colors">
       Have a project in mind or just want to chat? <br />
       Let's connect.
     </p>
     <form
       [formGroup]="myForm"
-      class="bg-white/5 border border-white/10 backdrop-blur-xl shadow-2xl rounded-2xl p-8 mb-4 flex flex-col gap-6 w-full max-w-3xl mt-8 text-left animate-fade-in-up-delay-2"
+      class="bg-white/60 border border-gray-200 dark:bg-white/5 dark:border-white/10 backdrop-blur-xl shadow-[0_8px_30px_rgb(0,0,0,0.05)] dark:shadow-2xl rounded-2xl p-8 mb-4 flex flex-col gap-6 w-full max-w-3xl mt-8 text-left animate-fade-in-up-delay-2 transition-colors"
       (ngSubmit)="onSubmit()"
     >
       <div class="grid gap-6 md:grid-cols-2">
         <div>
-          <label for="name" class="block mb-2 text-sm font-medium text-gray-300">Name</label>
+          <label for="name" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300 transition-colors">Name</label>
           <input
             type="text"
             id="name"
-            class="bg-white/5 border border-white/10 text-white text-sm rounded-lg focus:ring-(--primary-color) focus:border-(--primary-color) block w-full px-4 py-3 placeholder:text-gray-500 transition-colors"
+            class="bg-white dark:bg-white/5 border border-gray-300 dark:border-white/10 text-gray-900 dark:text-white text-sm rounded-lg focus:ring-(--primary-color) focus:border-(--primary-color) block w-full px-4 py-3 placeholder:text-gray-400 dark:placeholder:text-gray-500 transition-colors shadow-sm dark:shadow-none"
             placeholder="Your Name"
             formControlName="name"
             required
@@ -88,11 +88,11 @@
           }
         </div>
         <div>
-          <label for="email" class="block mb-2 text-sm font-medium text-gray-300">Email</label>
+          <label for="email" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300 transition-colors">Email</label>
           <input
             type="email"
             id="email"
-            class="bg-white/5 border border-white/10 text-white text-sm rounded-lg focus:ring-(--primary-color) focus:border-(--primary-color) block w-full px-4 py-3 placeholder:text-gray-500 transition-colors"
+            class="bg-white dark:bg-white/5 border border-gray-300 dark:border-white/10 text-gray-900 dark:text-white text-sm rounded-lg focus:ring-(--primary-color) focus:border-(--primary-color) block w-full px-4 py-3 placeholder:text-gray-400 dark:placeholder:text-gray-500 transition-colors shadow-sm dark:shadow-none"
             placeholder="contact@example.com"
             formControlName="email"
             required
@@ -104,12 +104,12 @@
           }
         </div>
         <div class="md:col-span-2">
-          <label for="Notes" class="block mb-2 text-sm font-medium text-gray-300">
+          <label for="Notes" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300 transition-colors">
             Message
           </label>
           <textarea
             id="Notes"
-            class="bg-white/5 border border-white/10 text-white text-sm rounded-lg focus:ring-(--primary-color) focus:border-(--primary-color) block w-full px-4 py-3 placeholder:text-gray-500 resize-none transition-colors"
+            class="bg-white dark:bg-white/5 border border-gray-300 dark:border-white/10 text-gray-900 dark:text-white text-sm rounded-lg focus:ring-(--primary-color) focus:border-(--primary-color) block w-full px-4 py-3 placeholder:text-gray-400 dark:placeholder:text-gray-500 resize-none transition-colors shadow-sm dark:shadow-none"
             rows="5"
             required
             placeholder="Your message..."
