@@ -23,6 +23,17 @@ export interface PortfolioData {
     list: string[];
   }[];
   projects: { title: string; description: string; link: string; btnLabel: string }[];
+  builtWith: {
+    route: string;
+    headline: string;
+    subtitle: string;
+    githubUrl: string;
+    categories: {
+      title: string;
+      icon: string;
+      items: { name: string; detail: string }[];
+    }[];
+  };
 }
 
 @Injectable({

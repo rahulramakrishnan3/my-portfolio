@@ -19,6 +19,11 @@ export const routes: Routes = [
     loadComponent: () => import('./components/projects/projects').then((m) => m.Projects),
   },
   {
+    path: 'built-with',
+    loadComponent: () =>
+      import('./components/built-with/built-with').then((m) => m.BuiltWith),
+  },
+  {
     path: '**',
     redirectTo: '',
   },

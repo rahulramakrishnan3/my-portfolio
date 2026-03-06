@@ -48,6 +48,11 @@
             "label": "Projects",
             "route": "/projects",
             "exact": false
+        },
+        {
+            "label": "Built With",
+            "route": "/built-with",
+            "exact": false
         }
     ],
     "aboutCards": [
@@ -108,5 +113,97 @@
             "link": "https://github.com/rahulramakrishnan3/my-portfolio",
             "btnLabel": "Portfolio"
         }
-    ]
+    ],
+    "builtWith": {
+        "route": "/built-with",
+        "headline": "How I Built This",
+        "subtitle": "A deep-dive into the Angular features, tools, and architecture that power this portfolio.",
+        "githubUrl": "https://github.com/rahulramakrishnan3/my-portfolio",
+        "categories": [
+            {
+                "title": "Framework & Language",
+                "icon": "⚡",
+                "items": [
+                    {
+                        "name": "Angular 20",
+                        "detail": "Latest standalone-component-first major version"
+                    },
+                    {
+                        "name": "TypeScript (strict)",
+                        "detail": "Full strict mode — no any, no implicit any"
+                    }
+                ]
+            },
+            {
+                "title": "Angular Features",
+                "icon": "🔧",
+                "items": [
+                    {
+                        "name": "Standalone Components",
+                        "detail": "No NgModules anywhere in the project"
+                    },
+                    {
+                        "name": "Signals & computed()",
+                        "detail": "Reactive local state without RxJS"
+                    },
+                    {
+                        "name": "Lazy-loaded Routes",
+                        "detail": "Each page is a separate JS chunk via loadComponent()"
+                    },
+                    {
+                        "name": "OnPush Change Detection",
+                        "detail": "All components use ChangeDetectionStrategy.OnPush"
+                    },
+                    {
+                        "name": "inject() Function",
+                        "detail": "No constructor injection — uses the inject() pattern"
+                    },
+                    {
+                        "name": "input() / output()",
+                        "detail": "Signal-based component I/O instead of @Input / @Output decorators"
+                    },
+                    {
+                        "name": "Native Control Flow",
+                        "detail": "@if, @for, @switch instead of *ngIf / *ngFor structural directives"
+                    }
+                ]
+            },
+            {
+                "title": "Styling",
+                "icon": "🎨",
+                "items": [
+                    {
+                        "name": "Tailwind CSS v4",
+                        "detail": "Utility-first styling with v4 CSS-native configuration"
+                    },
+                    {
+                        "name": "CSS Custom Properties",
+                        "detail": "--primary-color token used for consistent theming"
+                    },
+                    {
+                        "name": "Dark / Light Mode",
+                        "detail": "ThemeService persists preference to localStorage"
+                    }
+                ]
+            },
+            {
+                "title": "Architecture",
+                "icon": "🏗️",
+                "items": [
+                    {
+                        "name": "Data-driven via data.json",
+                        "detail": "All content lives in public/data.json — zero hardcoding in templates"
+                    },
+                    {
+                        "name": "PortfolioService",
+                        "detail": "Singleton service loads JSON via HttpClient and exposes a signal"
+                    },
+                    {
+                        "name": "Responsive Sidebar",
+                        "detail": "Collapsible desktop sidebar + mobile bottom navigation bar"
+                    }
+                ]
+            }
+        ]
+    }
 }

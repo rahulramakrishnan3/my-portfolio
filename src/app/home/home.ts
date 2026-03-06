@@ -1,9 +1,10 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { PortfolioService } from '../core/portfolio.service';
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './home.html',
   styleUrl: './home.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
