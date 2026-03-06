@@ -2,7 +2,17 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, inject, signal } from '@angular/core';
 
 export interface PortfolioData {
-  profile: { name: string; role: string; tagline: string; resumeUrl?: string };
+  profile: {
+    name: string;
+    role: string;
+    tagline: string;
+    resumeUrl?: string;
+    profileImage: string;
+    contactEmail: string;
+    greeting: string;
+    availabilityBadge: string;
+    floatingSkills: { label: string; highlighted: boolean }[];
+  };
   socialLinks: { github: string; instagram: string; linkedin: string };
   navItems: { label: string; route: string; exact?: boolean }[];
   aboutCards: {

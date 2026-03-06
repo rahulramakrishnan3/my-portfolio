@@ -3,7 +3,25 @@
         "name": "Rahul KR",
         "role": "Angular Developer",
         "tagline": "A Software Developer with solid foundation in Angular. Passionate about crafting seamless user experience.",
-        "resumeUrl": "Rahul_Resume.pdf"
+        "resumeUrl": "Rahul_Resume.pdf",
+        "profileImage": "images/profile-image-2.jpg",
+        "contactEmail": "rahulramakrishnan512@gmail.com",
+        "greeting": "Hi, I'm",
+        "availabilityBadge": "Available for work",
+        "floatingSkills": [
+            {
+                "label": "⚡ Angular",
+                "highlighted": true
+            },
+            {
+                "label": "TypeScript",
+                "highlighted": false
+            },
+            {
+                "label": "HTML/CSS, JavaScript",
+                "highlighted": false
+            }
+        ]
     },
     "socialLinks": {
         "github": "https://github.com/rahulramakrishnan3",

@@ -10,12 +10,12 @@
                     bg-(--primary-color)/10 border border-(--primary-color)/30
                     text-(--primary-color) text-sm font-semibold w-fit">
           <span class="h-2 w-2 rounded-full bg-(--primary-color) animate-pulse"></span>
-          Available for work
+          {{ data.profile.availabilityBadge }}
         </div>
 
         <!-- Name + Role -->
         <div class="animate-fade-in-up flex flex-col gap-2">
-          <p class="text-gray-500 dark:text-gray-400 text-lg font-medium">Hi, I'm</p>
+          <p class="text-gray-500 dark:text-gray-400 text-lg font-medium">{{ data.profile.greeting }}</p>
           <h1 class="text-5xl md:text-6xl xl:text-7xl font-extrabold tracking-tight
                      text-gray-900 dark:text-white leading-[1.05]">
             {{ data.profile.name }}
@@ -49,7 +49,7 @@
             </a>
           }
           <a
-            href="mailto:rahulramakrishnan512@gmail.com"
+            [href]="'mailto:' + data.profile.contactEmail"
             class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-sm
                    border-2 border-(--primary-color) text-(--primary-color)
                    hover:bg-(--primary-color) hover:text-white dark:hover:text-black
@@ -117,31 +117,21 @@
           <div class="relative h-56 w-56 md:h-72 md:w-72 xl:h-80 xl:w-80 rounded-full overflow-hidden
                       ring-4 ring-(--primary-color)/50 shadow-2xl">
             <img
-              src="images/profile-image-2.jpg"
-              alt="{{ data.profile.name }}"
+              [src]="data.profile.profileImage"
+              [alt]="data.profile.name"
               class="h-full w-full object-cover"
             />
           </div>
 
           <!-- Floating skill chips -->
-          <div class="absolute -top-3 -right-2 md:-right-6 px-3 py-1.5 rounded-full
-                      bg-white dark:bg-gray-900 border border-gray-200 dark:border-white/20
-                      shadow-lg text-xs font-bold text-(--primary-color)"
-               style="animation: floatBob 3s ease-in-out infinite;">
-            ⚡ Angular
-          </div>
-          <div class="absolute bottom-6 -left-2 md:-left-8 px-3 py-1.5 rounded-full
-                      bg-white dark:bg-gray-900 border border-gray-200 dark:border-white/20
-                      shadow-lg text-xs font-bold text-gray-700 dark:text-gray-300"
-               style="animation: floatBob 4s ease-in-out infinite; animation-delay: 0.8s">
-            TypeScript
-          </div>
-          <div class="absolute top-1/2 -right-0 md:-right-8 px-3 py-1.5 rounded-full
-                      bg-white dark:bg-gray-900 border border-gray-200 dark:border-white/20
-                      shadow-lg text-xs font-bold text-gray-700 dark:text-gray-300"
-               style="animation: floatBob 3.5s ease-in-out infinite; animation-delay: 0.4s">
-            UI/UX
-          </div>
+          @for (skill of data.profile.floatingSkills; track skill.label; let i = $index) {
+            <div
+              [class]="chipClass(i, skill.highlighted)"
+              [style]="chipStyle(i)"
+            >
+              {{ skill.label }}
+            </div>
+          }
         </div>
       </div>
 
