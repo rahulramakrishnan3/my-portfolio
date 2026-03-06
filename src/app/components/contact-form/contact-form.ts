@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-
+import { PortfolioService } from '../../core/portfolio.service';
 import emailjs from '@emailjs/browser';
 import { environment } from '../../../environments/environment.development';
 
@@ -10,9 +10,12 @@ import { environment } from '../../../environments/environment.development';
   imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './contact-form.html',
   styleUrl: './contact-form.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ContactForm implements OnInit {
-  myForm: any = FormGroup;
+  private portfolioService = inject(PortfolioService);
+  portfolioData = this.portfolioService.portfolioData;
+  myForm!: FormGroup;
   toast: boolean | undefined;
   isLoading: boolean | undefined;
   errorToast: boolean | undefined;

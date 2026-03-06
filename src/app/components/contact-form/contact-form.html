@@ -1,3 +1,4 @@
+@if (portfolioData(); as data) {
 <div class="relative left-0 top-0 w-full flex flex-col px-5 sm:px-20 xl:px-52 bg-transparent py-20">
   @if (toast) {
   <div
@@ -22,8 +23,8 @@
         </svg>
       </div>
       <div class="flex-1">
-        <strong class="block font-medium text-green-400">Message Sent!</strong>
-        <p class="mt-1 text-sm text-gray-300">Thank you for your message, I'll reply soon.</p>
+        <strong class="block font-medium text-green-400">{{ data.ui.contact.successTitle }}</strong>
+        <p class="mt-1 text-sm text-gray-300">{{ data.ui.contact.successMsg }}</p>
       </div>
     </div>
   </div>
@@ -50,8 +51,8 @@
         </svg>
       </div>
       <div class="flex-1">
-        <strong class="block font-medium text-red-400">Failed to Send</strong>
-        <p class="mt-1 text-sm text-gray-300">Oops, something went wrong. Please try again.</p>
+        <strong class="block font-medium text-red-400">{{ data.ui.contact.errorTitle }}</strong>
+        <p class="mt-1 text-sm text-gray-300">{{ data.ui.contact.errorMsg }}</p>
       </div>
     </div>
   </div>
@@ -60,10 +61,10 @@
   <div
     class="flex flex-col p-6 gap-4 mx-auto items-center justify-center text-center animate-fade-in-up"
   >
-    <h2 class="font-medium w-full text-3xl md:text-5xl tracking-tight text-gray-900 dark:text-white mb-2 transition-colors">Let's Work Together</h2>
+    <h2 class="font-medium w-full text-3xl md:text-5xl tracking-tight text-gray-900 dark:text-white mb-2 transition-colors">{{ data.ui.contact.headline }}</h2>
     <p class="w-full text-gray-600 dark:text-gray-400 text-lg max-w-xl animate-fade-in-up-delay-1 transition-colors">
-      Have a project in mind or just want to chat? <br />
-      Let's connect.
+      {{ data.ui.contact.subheadline }} <br />
+      {{ data.ui.contact.subheadline2 }}
     </p>
     <form
       [formGroup]="myForm"
@@ -72,52 +73,52 @@
     >
       <div class="grid gap-6 md:grid-cols-2">
         <div>
-          <label for="name" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300 transition-colors">Name</label>
+          <label for="name" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300 transition-colors">{{ data.ui.contact.nameLabel }}</label>
           <input
             type="text"
             id="name"
             class="bg-white dark:bg-white/5 border border-gray-300 dark:border-white/10 text-gray-900 dark:text-white text-sm rounded-lg focus:ring-(--primary-color) focus:border-(--primary-color) block w-full px-4 py-3 placeholder:text-gray-400 dark:placeholder:text-gray-500 transition-colors shadow-sm dark:shadow-none"
-            placeholder="Your Name"
+            [placeholder]="data.ui.contact.namePlaceholder"
             formControlName="name"
             required
           />
           @if (myForm.get('name')?.invalid && myForm.get('name')?.touched) {
           <p class="mt-2.5 text-sm text-(--danger-color) text-fg-danger-strong">
-            <span class="font-medium">Oh, snapp!</span> Name is empty &#128519;.
+            <span class="font-medium">{{ data.ui.contact.errorPrefix }}</span> {{ data.ui.contact.nameError }}
           </p>
           }
         </div>
         <div>
-          <label for="email" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300 transition-colors">Email</label>
+          <label for="email" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300 transition-colors">{{ data.ui.contact.emailLabel }}</label>
           <input
             type="email"
             id="email"
             class="bg-white dark:bg-white/5 border border-gray-300 dark:border-white/10 text-gray-900 dark:text-white text-sm rounded-lg focus:ring-(--primary-color) focus:border-(--primary-color) block w-full px-4 py-3 placeholder:text-gray-400 dark:placeholder:text-gray-500 transition-colors shadow-sm dark:shadow-none"
-            placeholder="contact@example.com"
+            [placeholder]="data.ui.contact.emailPlaceholder"
             formControlName="email"
             required
           />
           @if (myForm.get('email')?.invalid && myForm.get('email')?.touched) {
           <p class="mt-2.5 text-sm text-(--danger-color) text-fg-danger-strong">
-            <span class="font-medium">Oh, snapp!</span> Email is empty &#128519;.
+            <span class="font-medium">{{ data.ui.contact.errorPrefix }}</span> {{ data.ui.contact.emailError }}
           </p>
           }
         </div>
         <div class="md:col-span-2">
           <label for="Notes" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300 transition-colors">
-            Message
+            {{ data.ui.contact.messageLabel }}
           </label>
           <textarea
             id="Notes"
             class="bg-white dark:bg-white/5 border border-gray-300 dark:border-white/10 text-gray-900 dark:text-white text-sm rounded-lg focus:ring-(--primary-color) focus:border-(--primary-color) block w-full px-4 py-3 placeholder:text-gray-400 dark:placeholder:text-gray-500 resize-none transition-colors shadow-sm dark:shadow-none"
             rows="5"
             required
-            placeholder="Your message..."
+            [placeholder]="data.ui.contact.messagePlaceholder"
             formControlName="message"
           ></textarea>
           @if (myForm.get('message')?.invalid && myForm.get('message')?.touched) {
           <p class="mt-2.5 text-sm text-(--danger-color) text-fg-danger-strong">
-            <span class="font-medium">Oh, snapp!</span> Message is empty &#128519;.
+            <span class="font-medium">{{ data.ui.contact.errorPrefix }}</span> {{ data.ui.contact.messageError }}
           </p>
           }
         </div>
@@ -128,14 +129,15 @@
         [disabled]="myForm.invalid && !isLoading"
       >
         @if (!isLoading) {
-        <span>Submit</span>
+        <span>{{ data.ui.contact.submit }}</span>
         } @else {
         <span class="inline-flex items-center gap-2">
           <svg class="h-4 w-4 animate-spin">...</svg>
-          Sending...
+          {{ data.ui.contact.sending }}
         </span>
         }
       </button>
     </form>
   </div>
 </div>
+}

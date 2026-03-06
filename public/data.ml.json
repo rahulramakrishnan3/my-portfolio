@@ -1,0 +1,260 @@
+{
+    "profile": {
+        "name": "Rahul KR",
+        "role": "Angular ഡെവലപ്പർ",
+        "tagline": "Angular-ൽ ശക്തമായ അടിത്തറയുള്ള ഒരു സോഫ്‌റ്റ്‌വെയർ ഡെവലപ്പർ. മികച്ച ഉപയോക്തൃ അനുഭവം സൃഷ്ടിക്കുന്നതിൽ അഭിരുചിയുള്ളവൻ.",
+        "resumeUrl": "Rahul_Resume.pdf",
+        "profileImage": "images/profile-image-2.jpg",
+        "contactEmail": "rahulramakrishnan512@gmail.com",
+        "greeting": "ഹായ്, ഞാൻ",
+        "availabilityBadge": "ജോലിക്ക് ലഭ്യം",
+        "floatingSkills": [
+            {
+                "label": "⚡ Angular",
+                "highlighted": true
+            },
+            {
+                "label": "TypeScript",
+                "highlighted": false
+            },
+            {
+                "label": "HTML/CSS, JavaScript",
+                "highlighted": false
+            }
+        ]
+    },
+    "socialLinks": {
+        "github": "https://github.com/rahulramakrishnan3",
+        "instagram": "https://www.instagram.com/rahulramakrishnan._",
+        "linkedin": "https://www.linkedin.com/in/rahulramakrishnan3"
+    },
+    "navItems": [
+        {
+            "label": "ഹോം",
+            "route": "/",
+            "exact": true
+        },
+        {
+            "label": "എന്നെ കുറിച്ച്",
+            "route": "/about",
+            "exact": false
+        },
+        {
+            "label": "ബന്ധപ്പെടുക",
+            "route": "/contact-form",
+            "exact": false
+        },
+        {
+            "label": "പ്രോജക്ടുകൾ",
+            "route": "/projects",
+            "exact": false
+        },
+        {
+            "label": "നിർമ്മാണ രഹസ്യം",
+            "route": "/built-with",
+            "exact": false
+        }
+    ],
+    "aboutCards": [
+        {
+            "id": 1,
+            "title": "എനിക്ക് ചെയ്യാൻ കഴിയുന്നത്",
+            "icon": "svgs/what_i_can_do.svg",
+            "description": "Angular ഉപയോഗിച്ച് ഫ്രണ്ട്-എൻഡ് ഡെവലപ്‌മെന്റിൽ ഞാൻ പ്രവീണനാണ്. ഉപകരണങ്ങളിലുടനീളം തടസ്സരഹിതമായ ഉപയോക്തൃ അനുഭവം നൽകുന്ന റെസ്‌പോൺസീവ് ആപ്പുകൾ ഞാൻ നിർമ്മിക്കുന്നു.",
+            "list": [
+                "UI/UX",
+                "വെബ് ഡെവലപ്‌മെന്റ്",
+                "മൊബൈൽ ഡെവലപ്‌മെന്റ്",
+                "API ഇൻ്റഗ്രേഷൻ"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "ഞാൻ ഉപയോഗിക്കുന്ന ടൂളുകൾ",
+            "icon": "svgs/buffer-color-svgrepo-com.svg",
+            "description": "HTML, CSS, JavaScript, TypeScript എന്നിവയിൽ ശക്തമായ അടിത്തറ. Angular, Tailwind CSS, Angular Material തുടങ്ങിയ ആധുനിക ഫ്രെയ്‌മ്‌വർക്കുകൾ ഉപയോഗിക്കുന്നു.",
+            "list": [
+                "Angular",
+                "TypeScript",
+                "JavaScript",
+                "Tailwind CSS",
+                "Angular Material",
+                "Git"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "ഡെവലപ്‌മെന്റ് രീതികൾ",
+            "icon": "svgs/color-palette-svgrepo-com.svg",
+            "description": "Git-ഉം Agile രീതിശാസ്ത്രങ്ങളും ഉൾപ്പെടെ വെബ് ഡെവലപ്‌മെന്റ് മികച്ച രീതികൾ ഞാൻ പാലിക്കുന്നു. കോഡ് ഗുണനിലവാരം, പ്രകടനം, ഉപയോക്തൃ-കേന്ദ്രീകൃത ഡിസൈൻ എന്നിവ പ്രാഥമ്യം.",
+            "list": [
+                "Agile",
+                "റെസ്‌പോൺസീവ് ഡിസൈൻ",
+                "പ്രകടന ഒപ്റ്റിമൈസേഷൻ"
+            ]
+        }
+    ],
+    "projects": [
+        {
+            "title": "MentorED മൊബൈൽ ആപ്ലിക്കേഷൻ",
+            "description": "Angular, Ionic ഫ്രെയ്‌മ്‌വർക്ക് ഉപയോഗിച്ച് ഫ്രണ്ട്-എൻഡ് ഡെവലപ്‌മെന്റ്. RESTful API ഡിസൈൻ, ഇൻ്റഗ്രേഷൻ, Git ഉപയോഗിച്ച് വേർഷൻ കൺട്രോൾ. RxJS, Angular Material ഉപയോഗിച്ച് ഇൻ്ററാക്ടീവ് ആപ്പ് നിർമ്മാണം.",
+            "link": "https://elevate-shikshagraha.shikshalokam.org/",
+            "btnLabel": "Shikshagraha"
+        },
+        {
+            "title": "MentorED പോർട്ടൽ",
+            "description": "Angular, TypeScript ഉപയോഗിച്ച് ഫ്രണ്ട്-എൻഡ് ഡെവലപ്‌മെന്റ്. RESTful API ഇൻ്റഗ്രേഷൻ, GitHub-ൽ വേർഷൻ കൺട്രോൾ.",
+            "link": "https://github.com/rahulramakrishnan3/mentorED-Portal",
+            "btnLabel": "Github"
+        },
+        {
+            "title": "എൻ്റെ പോർട്ട്ഫോളിയോ",
+            "description": "Angular 20, Tailwind CSS ഉപയോഗിച്ച് നിർമ്മിച്ച ഈ പോർട്ട്ഫോളിയോ.",
+            "link": "https://github.com/rahulramakrishnan3/my-portfolio",
+            "btnLabel": "Portfolio"
+        }
+    ],
+    "builtWith": {
+        "route": "/built-with",
+        "headline": "ഞാൻ ഇത് എങ്ങനെ നിർമ്മിച്ചു",
+        "subtitle": "ഈ പോർട്ട്ഫോളിയോ നിർമ്മിക്കാൻ ഉപയോഗിച്ച Angular സവിശേഷതകൾ, ടൂളുകൾ, ആർക്കിടെക്ചർ എന്നിവയിലേക്ക് ഒരു ആഴത്തിലുള്ള നോട്ടം.",
+        "githubUrl": "https://github.com/rahulramakrishnan3/my-portfolio",
+        "categories": [
+            {
+                "title": "ഫ്രെയ്‌മ്‌വർക്ക് & ഭാഷ",
+                "icon": "⚡",
+                "items": [
+                    {
+                        "name": "Angular 20",
+                        "detail": "ഏറ്റവും പുതിയ standalone-component-first പ്രധാന പതിപ്പ്"
+                    },
+                    {
+                        "name": "TypeScript (strict)",
+                        "detail": "പൂർണ്ണ strict മോഡ് — any ഇല്ല, implicit any ഇല്ല"
+                    }
+                ]
+            },
+            {
+                "title": "Angular സവിശേഷതകൾ",
+                "icon": "🔧",
+                "items": [
+                    {
+                        "name": "Standalone Components",
+                        "detail": "പ്രോജക്ടിൽ എവിടെയും NgModules ഇല്ല"
+                    },
+                    {
+                        "name": "Signals & computed()",
+                        "detail": "RxJS ഇല്ലാതെ reactive local state"
+                    },
+                    {
+                        "name": "Lazy-loaded Routes",
+                        "detail": "loadComponent() വഴി ഓരോ പേജും വ്യത്യസ്ത JS chunk"
+                    },
+                    {
+                        "name": "OnPush Change Detection",
+                        "detail": "എല്ലാ components-ഉം ChangeDetectionStrategy.OnPush ഉപയോഗിക്കുന്നു"
+                    },
+                    {
+                        "name": "inject() ഫംഗ്ഷൻ",
+                        "detail": "Constructor injection ഇല്ല — inject() pattern ഉപയോഗിക്കുന്നു"
+                    },
+                    {
+                        "name": "input() / output()",
+                        "detail": "@Input / @Output decorators-ന് പകരം Signal-based I/O"
+                    },
+                    {
+                        "name": "Native Control Flow",
+                        "detail": "*ngIf / *ngFor-ന് പകരം @if, @for, @switch"
+                    }
+                ]
+            },
+            {
+                "title": "ശൈലി",
+                "icon": "🎨",
+                "items": [
+                    {
+                        "name": "Tailwind CSS v4",
+                        "detail": "v4 CSS-native configuration ഉള്ള utility-first styling"
+                    },
+                    {
+                        "name": "CSS Custom Properties",
+                        "detail": "ഏകീകൃത theming-നായി --primary-color token"
+                    },
+                    {
+                        "name": "ഡാർക്ക് / ലൈറ്റ് മോഡ്",
+                        "detail": "ThemeService localStorage-ൽ preference സൂക്ഷിക്കുന്നു"
+                    }
+                ]
+            },
+            {
+                "title": "ആർക്കിടെക്ചർ",
+                "icon": "🏗️",
+                "items": [
+                    {
+                        "name": "Data-driven via data.json",
+                        "detail": "എല്ലാ content-ഉം public/data.json-ൽ — templates-ൽ hardcoding ഇല്ല"
+                    },
+                    {
+                        "name": "PortfolioService",
+                        "detail": "Singleton service HttpClient വഴി JSON load ചെയ്ത് signal expose ചെയ്യുന്നു"
+                    },
+                    {
+                        "name": "Responsive Sidebar",
+                        "detail": "Desktop-ൽ collapsible sidebar + mobile-ൽ bottom navigation bar"
+                    }
+                ]
+            }
+        ]
+    },
+    "ui": {
+        "nav": {
+            "resume": "റെസ്യൂമെ",
+            "lightMode": "ലൈറ്റ് മോഡ്",
+            "darkMode": "ഡാർക്ക് മോഡ്",
+            "light": "ലൈറ്റ്",
+            "dark": "ഡാർക്ക്",
+            "more": "കൂടുതൽ",
+            "language": "English",
+            "languageSwitchLabel": "Switch to English"
+        },
+        "home": {
+            "downloadCv": "CV ഡൗൺലോഡ് ചെയ്യുക",
+            "contactMe": "✉ ബന്ധപ്പെടുക",
+            "howIBuiltThis": "ഞാൻ ഇത് എങ്ങനെ നിർമ്മിച്ചു"
+        },
+        "about": {
+            "headline": "ഡിജിറ്റൽ അനുഭവങ്ങൾ നിർമ്മിക്കുക",
+            "subheadline": "അതിശയകരമായ UI നിർമ്മിക്കുന്നതിലും ഉയർന്ന നിലവാരമുള്ള applications വികസിപ്പിക്കുന്നതിലും ഞാൻ വൈദഗ്ദ്ധ്യം നേടിയിട്ടുണ്ട്."
+        },
+        "projects": {
+            "heading": "പ്രോജക്ടുകൾ"
+        },
+        "contact": {
+            "headline": "നമുക്ക് ഒരുമിച്ച് പ്രവർത്തിക്കാം",
+            "subheadline": "ഒരു പ്രോജക്ട് മനസ്സിലുണ്ടോ അല്ലെങ്കിൽ വെറുതെ സംസാരിക്കണോ?",
+            "subheadline2": "ബന്ധപ്പെടാം.",
+            "nameLabel": "പേര്",
+            "namePlaceholder": "നിങ്ങളുടെ പേര്",
+            "emailLabel": "ഇമെയിൽ",
+            "emailPlaceholder": "contact@example.com",
+            "messageLabel": "സന്ദേശം",
+            "messagePlaceholder": "നിങ്ങളുടെ സന്ദേശം...",
+            "submit": "അയക്കുക",
+            "sending": "അയക്കുന്നു...",
+            "nameError": "പേര് ഒഴിഞ്ഞിരിക്കുന്നു 😗.",
+            "emailError": "ഇമെയിൽ ഒഴിഞ്ഞിരിക്കുന്നു 😗.",
+            "messageError": "സന്ദേശം ഒഴിഞ്ഞിരിക്കുന്നു 😗.",
+            "errorPrefix": "ക്ഷമിക്കണം!",
+            "successTitle": "സന്ദേശം അയച്ചു!",
+            "successMsg": "നിങ്ങളുടെ സന്ദേശത്തിന് നന്ദി, ഞാൻ ഉടൻ മറുപടി നൽകാം.",
+            "errorTitle": "അയക്കൽ പരാജയപ്പെട്ടു",
+            "errorMsg": "ക്ഷമിക്കണം, എന്തോ തെറ്റ് സംഭവിച്ചു. ദയവായി വീണ്ടും ശ്രമിക്കുക."
+        },
+        "builtWith": {
+            "backToHome": "ഹോമിലേക്ക്",
+            "openSourceBadge": "ഓപ്പൺ സോഴ്സ്",
+            "viewSource": "GitHub-ൽ സോഴ്സ് കാണുക",
+            "footer": "❤️ Angular ഉപയോഗിച്ച് നിർമ്മിച്ചു · എല്ലാ content-ഉം ഇതിൽ നിന്ന്"
+        }
+    }
+}

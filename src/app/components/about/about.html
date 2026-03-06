@@ -1,10 +1,9 @@
 @if (portfolioData(); as data) {
 <div class="flex flex-col px-5 sm:px-20 xl:px-52 bg-transparent py-20">
   <div class="text-center md:text-left animate-fade-in-up">
-    <h1 class="text-4xl font-bold mb-4 text-gray-900 dark:text-white transition-colors">Build Digital Experiences</h1>
+    <h1 class="text-4xl font-bold mb-4 text-gray-900 dark:text-white transition-colors">{{ data.ui.about.headline }}</h1>
     <p class="text-gray-600 dark:text-gray-400 text-lg max-w-2xl transition-colors">
-      I specialize in creating stunning user interfaces and developing high-quality applications
-      that stand out.
+      {{ data.ui.about.subheadline }}
     </p>
   </div>
 

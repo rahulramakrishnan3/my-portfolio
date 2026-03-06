@@ -82,14 +82,14 @@
           <svg xmlns="http://www.w3.org/2000/svg" class="size-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
           </svg>
-          <span class="hidden xl:block">Resume</span>
+          <span class="hidden xl:block">{{ data.ui.nav.resume }}</span>
 
           <!-- Tooltip -->
           <span class="xl:hidden pointer-events-none absolute left-full ml-3 px-2.5 py-1.5 rounded-lg
                        bg-gray-900 dark:bg-white text-white dark:text-gray-900
                        text-xs font-semibold whitespace-nowrap shadow-xl
                        opacity-0 group-hover:opacity-100 transition-opacity duration-150 z-50">
-            Resume
+            {{ data.ui.nav.resume }}
           </span>
         </a>
       }
@@ -117,16 +117,44 @@
           <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
         </svg>
       }
-      <span class="hidden xl:block text-sm font-medium">{{ isDarkMode() ? 'Light Mode' : 'Dark Mode' }}</span>
-
-      <!-- Tooltip -->
-      <span class="xl:hidden pointer-events-none absolute left-full ml-3 px-2.5 py-1.5 rounded-lg
-                   bg-gray-900 dark:bg-white text-white dark:text-gray-900
-                   text-xs font-semibold whitespace-nowrap shadow-xl
-                   opacity-0 group-hover:opacity-100 transition-opacity duration-150 z-50">
-        {{ isDarkMode() ? 'Light Mode' : 'Dark Mode' }}
-      </span>
+      @if (portfolioData(); as data) {
+        <span class="hidden xl:block text-sm font-medium">{{ isDarkMode() ? data.ui.nav.lightMode : data.ui.nav.darkMode }}</span>
+        <!-- Tooltip -->
+        <span class="xl:hidden pointer-events-none absolute left-full ml-3 px-2.5 py-1.5 rounded-lg
+                     bg-gray-900 dark:bg-white text-white dark:text-gray-900
+                     text-xs font-semibold whitespace-nowrap shadow-xl
+                     opacity-0 group-hover:opacity-100 transition-opacity duration-150 z-50">
+          {{ isDarkMode() ? data.ui.nav.lightMode : data.ui.nav.darkMode }}
+        </span>
+      }
     </button>
+
+    <!-- Language Switcher (desktop sidebar only) -->
+    @if (portfolioData(); as data) {
+      <button
+        (click)="languageService.toggleLanguage()"
+        [title]="data.ui.nav.languageSwitchLabel"
+        class="group relative flex items-center gap-3 w-full justify-center xl:justify-start
+               rounded-xl px-0 xl:px-3 py-2.5
+               text-gray-500 dark:text-gray-400
+               hover:text-(--primary-color) hover:bg-(--primary-color)/10
+               transition-all duration-150"
+      >
+        <!-- Globe icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor" class="size-5 shrink-0">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253M3 12c0-.778.099-1.533.284-2.253" />
+        </svg>
+        <span class="hidden xl:block text-sm font-medium">{{ data.ui.nav.language }}</span>
+
+        <!-- Tooltip (icon-only view on md–lg) -->
+        <span class="xl:hidden pointer-events-none absolute left-full ml-3 px-2.5 py-1.5 rounded-lg
+                     bg-gray-900 dark:bg-white text-white dark:text-gray-900
+                     text-xs font-semibold whitespace-nowrap shadow-xl
+                     opacity-0 group-hover:opacity-100 transition-opacity duration-150 z-50">
+          {{ data.ui.nav.language }}
+        </span>
+      </button>
+    }
 
     <!-- Divider -->
     <div class="w-8 xl:w-full h-px bg-gray-200 dark:bg-white/[0.08]"></div>
@@ -209,7 +237,7 @@
         <svg xmlns="http://www.w3.org/2000/svg" class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.75">
           <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
         </svg>
-        <span class="text-[10px] font-semibold">More</span>
+        <span class="text-[10px] font-semibold">{{ data.ui.nav.more }}</span>
       </button>
 
       <!-- Theme Toggle -->
@@ -222,12 +250,12 @@
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor" class="size-5">
             <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
           </svg>
-          <span class="text-[10px] font-semibold">Light</span>
+          <span class="text-[10px] font-semibold">{{ data.ui.nav.light }}</span>
         } @else {
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor" class="size-5">
             <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
           </svg>
-          <span class="text-[10px] font-semibold">Dark</span>
+          <span class="text-[10px] font-semibold">{{ data.ui.nav.dark }}</span>
         }
       </button>
     </div>

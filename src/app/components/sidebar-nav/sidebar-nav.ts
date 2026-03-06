@@ -7,6 +7,7 @@ import {
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { PortfolioService } from '../../core/portfolio.service';
 import { ThemeService } from '../../core/theme.service';
+import { LanguageService } from '../../core/language.service';
 import { DialogBox } from '../dialog-box/dialog-box';
 
 @Component({
@@ -19,6 +20,7 @@ import { DialogBox } from '../dialog-box/dialog-box';
 export class SidebarNav {
   private portfolioService = inject(PortfolioService);
   public themeService = inject(ThemeService);
+  public languageService = inject(LanguageService);
 
   portfolioData = this.portfolioService.portfolioData;
   isDarkMode = this.themeService.isDarkMode;
