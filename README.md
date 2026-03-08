@@ -12,10 +12,12 @@ Welcome to my personal developer portfolio, crafted with passion and compiled be
   - `Contact Form`: An integrated contact mechanism powered by EmailJS, simplifying communications directly from the application.
   - UI overlays like `Dialog Box` and `Info Pop-over`.
 - **Standalone Angular Structure**: Embracing modern Angular best practices, employing standalone components, fine-grained routing, and efficient styling.
+- **PWA Ready & Custom Branding**: Configured as a Progressive Web App (PWA) with a customized brand logo, offering an app-like experience with installability and offline support.
 
 ## 🛠️ Technology Stack
 
 - **Framework**: [Angular JS (v20)](https://angular.dev/)
+- **PWA**: [@angular/pwa](https://angular.dev/guide/service-worker/getting-started) for service workers, app manifest, and offline capabilities.
 - **Styling**: [Tailwind CSS v4](https://tailwindcss.com/) directly integrated with Angular CLI via postcss.
 - **Languages**: TypeScript, HTML5, SCSS/CSS.
 - **Service Integration**: [EmailJS](https://www.emailjs.com/) for interactive contact features.
