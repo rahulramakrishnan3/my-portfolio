@@ -5,6 +5,12 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  background: var(--background-color);
+  color: var(--foreground-color, #111827);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 @layer utilities {
   .animate-fade-in-up {
     animation: fadeInUp 0.8s ease-out forwards;
@@ -35,8 +41,13 @@ html {
 }
 
 @keyframes floatBob {
-  0%, 100% { transform: translateY(0px); }
-  50%       { transform: translateY(-8px); }
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 @theme {
@@ -47,15 +58,51 @@ html {
 :root {
   --font-pj: 'Plus Jakarta Sans', sans-serif;
   --font-roboto: 'Roboto', sans-serif;
-  /* Light mode: clean indigo — readable on white */
   --primary-color: #4f46e5;
-  --background-color: #ffffff;
+  --background-color: #f8fafc;
+  --foreground-color: #0f172a;
+  --btn-color: #4f46e5;
   --btn-hover-color: #4338ca;
+  --btn-text-color: #ffffff;
+  --white: #ffffff;
+  --danger-color: #ef4444;
 }
 
 :root.dark {
-  --background-color: #000000;
-  /* Dark mode: restore the signature cyan */
+  --background-color: #020817;
+  --foreground-color: #e2e8f0;
   --primary-color: #00ffff;
+  --btn-color: #00ffff;
   --btn-hover-color: #40faf1;
+  --btn-text-color: #020817;
+  --white: #0f172a;
+  --danger-color: #f87171;
 }
+
+::selection {
+  background: color-mix(in srgb, var(--primary-color) 40%, transparent);
+  color: var(--foreground-color);
+}
+
+a,
+button,
+input,
+textarea {
+  transition: transform 0.2s ease, opacity 0.2s ease, background-color 0.2s ease,
+    border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+a:hover,
+button:hover {
+  transform: translateY(-1px);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary-color) 28%, transparent);
+}
+
+

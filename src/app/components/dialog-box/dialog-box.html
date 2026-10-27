@@ -54,7 +54,9 @@
               [href]="resumeUrl"
               download
               target="_blank"
-              class="mt-2 w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-base font-bold border-2 border-(--primary-color) text-(--primary-color) hover:bg-(--primary-color) hover:text-white dark:hover:text-black transition-all duration-200"
+              rel="noopener noreferrer"
+              aria-label="Download Rahul's resume"
+              class="mt-2 w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl text-base font-bold border-2 border-(--primary-color) text-(--primary-color) hover:bg-(--primary-color) hover:text-white dark:hover:text-black transition-all duration-200 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-(--primary-color)/30"
               (click)="closeDialog()"
             >
               <svg xmlns="http://www.w3.org/2000/svg" class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">

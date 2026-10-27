@@ -1,5 +1,12 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
+export interface ProjectCardData {
+  title: string;
+  description: string;
+  link: string;
+  btnLabel: string;
+}
+
 @Component({
   selector: 'app-project-card',
   imports: [],
@@ -8,12 +15,18 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProjectCard {
-  @Input() data: any;
-  description = false;
-  openDescription() {
-    this.description = true;
+  @Input({ required: true }) data!: ProjectCardData;
+  protected description = false;
+
+  toggleDescription(): void {
+    this.description = !this.description;
   }
-  closeDescription() {
-    this.description = false;
+
+  get summaryText(): string {
+    const text = this.data?.description ?? '';
+    if (this.description || text.length <= 110) {
+      return text;
+    }
+    return `${text.slice(0, 110)}...`;
   }
 }

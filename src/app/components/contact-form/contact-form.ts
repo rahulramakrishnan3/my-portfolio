@@ -5,6 +5,18 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import emailjs from '@emailjs/browser';
 import { environment } from '../../../environments/environment.development';
 
+interface ContactFormValues {
+  name: string;
+  email: string;
+  message: string;
+}
+
+type ContactFormGroup = FormGroup<{
+  name: FormControl<string>;
+  email: FormControl<string>;
+  message: FormControl<string>;
+}>;
+
 @Component({
   selector: 'app-contact-form',
   imports: [ReactiveFormsModule, CommonModule],
@@ -12,40 +24,46 @@ import { environment } from '../../../environments/environment.development';
   styleUrl: './contact-form.scss',
 })
 export class ContactForm implements OnInit {
-  myForm: any = FormGroup;
+  myForm: ContactFormGroup;
   toast: boolean | undefined;
-  isLoading: boolean | undefined;
+  isLoading = false;
   errorToast: boolean | undefined;
 
   constructor() {
     this.myForm = new FormGroup({
-      name: new FormControl('', [
-        Validators.required,
-        Validators.minLength(3),
-        Validators.maxLength(30),
-      ]),
-      email: new FormControl('', [Validators.required, Validators.email, Validators.maxLength(50)]),
-      message: new FormControl('', [
-        Validators.required,
-        Validators.minLength(10),
-        Validators.maxLength(500),
-      ]),
+      name: new FormControl('', {
+        nonNullable: true,
+        validators: [Validators.required, Validators.minLength(3), Validators.maxLength(30)],
+      }),
+      email: new FormControl('', {
+        nonNullable: true,
+        validators: [Validators.required, Validators.email, Validators.maxLength(50)],
+      }),
+      message: new FormControl('', {
+        nonNullable: true,
+        validators: [Validators.required, Validators.minLength(10), Validators.maxLength(500)],
+      }),
     });
   }
-  ngOnInit() {
-    console.log('Contact Form Component Initialized');
+
+  ngOnInit(): void {
+    // kept intentionally minimal; no console noise in production.
   }
-  onSubmit() {
+
+  onSubmit(): void {
     if (this.myForm.invalid) {
       this.myForm.markAllAsTouched();
       return;
     }
+
     this.isLoading = true;
+    const payload = this.myForm.getRawValue() as Record<string, unknown>;
+
     emailjs
       .send(
         environment.emailJsServiceId,
         environment.emailJsTemplateId,
-        { ...this.myForm.value },
+        payload,
         { publicKey: environment.emailJsPublicKey }
       )
       .then((response) => {
